@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from 'react';
 import { FaSchool, FaUniversity, FaGraduationCap } from 'react-icons/fa';
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
@@ -6,21 +6,21 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 const Education: React.FC = () => {
   const educationData = [
     {
-      icon: <FaSchool className="w-10 h-10 text-h2" />,
+      icon: <FaSchool className="w-12 h-12 text-h2" />,
       school: "Saraswati Vidya Mandir, Shujalpur",
       degree: "10th Class",
       year: "2019",
       result: "70%",
     },
     {
-      icon: <FaGraduationCap className="w-10 h-10 text-h2" />,
+      icon: <FaGraduationCap className="w-12 h-12 text-h2" />,
       school: "Saraswati Vidya Mandir, Shujalpur",
       degree: "12th Class", 
       year: "2021",
       result: "73%",
     },
     {
-      icon: <FaUniversity className="w-10 h-10 text-h2" />,
+      icon: <FaUniversity className="w-12 h-12 text-h2" />,
       school: "Shri G.S. Institute of Technology, Indore",
       degree: "B.Tech in Biomedical Engineering",
       year: "2021 - 2025",
@@ -42,7 +42,7 @@ const Education: React.FC = () => {
               <div key={index}>
                 <Card className="overflow-hidden h-full border shadow-lg transition-all duration-300 border-cc group bg-cc hover:shadow-2xl">
                   <CardHeader className="flex justify-center items-center pt-8">
-                    <div className="p-4 rounded-full transition-transform text-h2 duration-300 bg-cc group-hover:scale-110">
+                    <div className="p-4 rounded-full transition-transform text-h2 duration-300 bg-h1/10 group-hover:scale-110">
                       {edu.icon}
                     </div>
                   </CardHeader>

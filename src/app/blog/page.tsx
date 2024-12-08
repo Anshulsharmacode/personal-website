@@ -78,8 +78,8 @@ const BlogShowcase: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="mb-16 text-5xl font-bold text-center"
         >
-          <span className="text-color-3">Latest</span>{" "}
-          <span className="text-color-5">Blog Posts</span>
+          {/* <span className="text-color">Latest</span>{" "} */}
+          <span className="text-h1">Blos <span className="text-h2">Posts</span> </span>
         </motion.h2>
 
         {isLoading && (
@@ -87,7 +87,7 @@ const BlogShowcase: React.FC = () => {
         )}
 
         {error && (
-          <div className="text-xl text-center text-red-500">{error}</div>
+          <div className="text-xl text-center text-hm">{error}</div>
         )}
 
         {!isLoading && !error && (
@@ -100,7 +100,7 @@ const BlogShowcase: React.FC = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <Card
-                  className="overflow-hidden h-full rounded-lg border shadow-lg transition-all duration-300 cursor-pointer group bg-color-2 hover:shadow-2xl border-color-4/20"
+                  className="overflow-hidden h-full rounded-lg border shadow-lg transition-all duration-300 cursor-pointer group bg-cc hover:shadow-2xl border-color-4/20"
                   onClick={() => window.open(post.link, "_blank")}
                 >
                   <div className="overflow-hidden relative w-full h-48">
@@ -111,20 +111,20 @@ const BlogShowcase: React.FC = () => {
                       objectFit="cover"
                       className="transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t to-transparent from-color-2 via-color-2/80"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t to-transparent from-hm via-dm/80"></div>
                   </div>
                   <CardContent className="p-6">
-                    <h3 className="flex items-center mb-2 text-xl font-semibold text-color-5">
+                    <h3 className="flex items-center mb-2 text-xl font-semibold text-hm">
                       {post.title}
                     </h3>
-                    <p className="mb-4 text-sm text-color-3/80">
+                    <p className="mb-4 text-sm text-dm">
                       {post.subtitle}
                     </p>
                     <div className="flex justify-between items-center">
                       <span className="text-sm text-muted-foreground">
                         {new Date(post.pubDate).toLocaleDateString()}
                       </span>
-                      <div className="inline-flex items-center transition-colors duration-300 group text-color-5 hover:text-color-4">
+                      <div className="inline-flex items-center transition-colors duration-300 group text-hm hover:text-dm">
                         <span className="mr-2 text-sm font-medium">
                           Read More
                         </span>

@@ -7,7 +7,7 @@ export default function Projects() {
     <div className="flex flex-col justify-center items-center px-6 py-16 mt-14 space-y-16 w-screen min-h-screen bg-bc md:px-20 lg:px-40">
       {/* Section Title */}
       <h2 className="mb-8 text-6xl font-bold tracking-tight text-center">
-        <span className="text-h1">My</span>{" "}
+        <span className="text-h1">My</span>
         <span className="text-transparent bg-h2">Projects</span>
       </h2>
 
@@ -31,6 +31,7 @@ export default function Projects() {
                   fill
                   className="object-cover transition-transform duration-500 hover:scale-105"
                   priority
+                  sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
                 />
               </div>
               <p className="max-w-3xl text-xl leading-relaxed text-center text-dm">
@@ -56,6 +57,7 @@ export default function Projects() {
                     fill
                     className="object-cover transition-transform duration-500 hover:scale-105"
                     priority
+                    sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
                   />
                 </div>
                 <p className="text-lg leading-relaxed text-center text-dm">
@@ -79,6 +81,7 @@ export default function Projects() {
                     fill
                     className="object-cover transition-transform duration-500 hover:scale-105"
                     priority
+                    sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
                   />
                 </div>
                 <p className="text-lg leading-relaxed text-center text-dm">
@@ -111,6 +114,7 @@ export default function Projects() {
                     fill
                     className="object-cover transition-transform duration-500 hover:scale-105"
                     priority
+                    sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
                   />
                 </div>
                 <p className="text-lg leading-relaxed text-center text-dm">
@@ -134,6 +138,7 @@ export default function Projects() {
                     fill
                     className="object-cover transition-transform duration-500 hover:scale-105"
                     priority
+                    sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
                   />
                 </div>
                 <p className="text-lg leading-relaxed text-center text-dm">
@@ -157,6 +162,7 @@ export default function Projects() {
                     fill
                     className="object-cover transition-transform duration-500 hover:scale-105"
                     priority
+                    sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
                   />
                 </div>
                 <p className="text-lg leading-relaxed text-center text-dm">
