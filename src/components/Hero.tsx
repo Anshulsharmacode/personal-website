@@ -1,9 +1,10 @@
 "use client";
 
-
-import { FaGithub, FaLinkedin, FaEnvelope,FaKaggle,FaMedium } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaKaggle, FaMedium } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 
 const MotionDiv = dynamic(
   () => import("framer-motion").then((mod) => mod.motion.div),
@@ -23,11 +24,13 @@ const Hero = () => {
   };
 
   if (!isMounted) {
-    return null; // or a loading placeholder
+    return null;
   }
 
   return (
-    <section className="relative flex items-center justify-center text-black overflow-hidden w-full py-64">
+    <section className="flex overflow-hidden relative justify-center items-center w-full min-h-screen bg-bc">
+      <div className="absolute inset-0 bg-gradient-to-b opacity-50 from-bc/50 to-bc" />
+      
       <MotionDiv
         initial="hidden"
         animate="visible"
@@ -38,106 +41,76 @@ const Hero = () => {
             },
           },
         }}
-        className="max-w-5xl mx-auto text-center px-4 relative z-10"
+        className="relative z-10 px-4 mx-auto max-w-5xl"
       >
-        <MotionDiv className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 font-raleway tracking-tight">
-          {Array.from("Anshul Sharma").map((char, index) => (
-            <MotionDiv
-              key={index}
-              variants={fadeInUpVariants}
-              className="inline-block"
-              style={{ display: "inline-block" }}
+        <Card className="p-8 backdrop-blur-lg bg-cc/5 border-h1/20">
+          <MotionDiv className="mb-8 text-center">
+            <h1 className="text-4xl font-bold tracking-tight text-transparent bg-clip-text sm:text-5xl md:text-6xl lg:text-7xl bg-h1">
+              {Array.from("Anshul Sharma").map((char, index) => (
+                <MotionDiv
+                  key={index}
+                  variants={fadeInUpVariants}
+                  className="inline-block"
+                >
+                  <span className="inline-block pb-2">
+                    {char === " " ? "\u00A0" : char}
+                  </span>
+                </MotionDiv>
+              ))}
+            </h1>
+          </MotionDiv>
+
+          <MotionDiv
+            variants={fadeInUpVariants}
+            className="mb-8 text-2xl font-light text-center text-dm"
+          >
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-h2 to-hm">
+              Biomedical Engineer & AI Machine Learning 
+            </span>
+          </MotionDiv>
+
+          <MotionDiv
+            variants={fadeInUpVariants}
+            className="flex flex-col gap-4 justify-center mb-8 sm:flex-row"
+          >
+            <Button
+              variant="outline"
+              className="group border-h1 hover:bg-h1/20 text-dm"
             >
-              <span className="block pb-2">
-                {char === " " ? "\u00A0" : char}
-              </span>
-            </MotionDiv>
-          ))}
-        </MotionDiv>
+              <span className="mr-2">View Projects</span>
+              <span className="transition-transform group-hover:translate-x-1">→</span>
+            </Button>
+            <Button
+              className="bg-gradient-to-r from-h1 to-h2 hover:opacity-90 text-bc"
+            >
+              <span className="mr-2">Get in Touch</span>
+              <FaEnvelope className="w-4 h-4" />
+            </Button>
+          </MotionDiv>
 
-        <MotionDiv
-          variants={fadeInUpVariants}
-          className="text-2xl font-light mb-6 font-raleway"
-        >
-          Biomedical Engineer & AI Machine Learning 
-        </MotionDiv>
-
-        <MotionDiv
-          variants={fadeInUpVariants}
-          className="text-l font-light mb-12 mx-auto font-montserrat max-w-3xl"
-        >
-          Innovating Medical Imaging with AI & Machine Learning
-        </MotionDiv>
-
-        {/* <MotionDiv
-          variants={fadeInUpVariants}
-          className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-16"
-        >
-          <Button
-            variant="outline"
-            size="lg"
-            className="font-montserrat text-lg relative overflow-hidden group px-8 py-3"
+          <MotionDiv
+            variants={fadeInUpVariants}
+            className="flex justify-center space-x-6"
           >
-            <span className="relative z-10">View Projects</span>
-            <span className="absolute inset-x-0 bottom-0 h-0 bg-blue-600 transition-all duration-300 ease-in-out group-hover:h-full"></span>
-          </Button>
-          <Button
-            size="lg"
-            className="font-montserrat text-lg relative overflow-hidden group px-8 py-3"
-          >
-            <span className="relative z-10">Get in Touch</span>
-            <span className="absolute inset-x-0 bottom-0 h-0 bg-gradient-to-r from-blue-500 to-purple-600 transition-all duration-300 ease-in-out group-hover:h-full"></span>
-          </Button>
-        </MotionDiv> */}
-
-        <MotionDiv
-          variants={fadeInUpVariants}
-          className="flex justify-center space-x-8"
-        >
-          <a
-            href="https://github.com/Anshulsharmacodes"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-black transition-colors duration-300 ease-in-out transform hover:scale-110"
-            aria-label="GitHub Profile"
-          >
-            <FaGithub size={28} />
-          </a>
-          <a
-            href="https://linkedin.com/in/Anshulsharma-8386ansh"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-black transition-colors duration-300 ease-in-out transform hover:scale-110"
-            aria-label="LinkedIn Profile"
-          >
-            <FaLinkedin size={28} />
-          </a>
-          <a
-            href="mailto:anshulsharma8386@gmail.com"
-            className="text-gray-400 hover:text-black transition-colors duration-300 ease-in-out transform hover:scale-110"
-            aria-label="Email Contact"
-          >
-            <FaEnvelope size={28} />
-          </a>
-          <a
-            href="https://medium.com/@anshulsharmacodes"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-black transition-colors duration-300 ease-in-out transform hover:scale-110"
-            aria-label="Medium Blog"
-          >
-            <FaMedium size={28} />
-          </a>
-          <a
-            href="https://www.kaggle.com/anshulsharmacodes"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-black transition-colors duration-300 ease-in-out transform hover:scale-110"
-            aria-label="Kaggle Profile"
-          >
-            <FaKaggle size={28} />
-          </a>
-        </MotionDiv>
+            {[
+              { icon: FaGithub, href: "https://github.com/Anshulsharmacodes", label: "GitHub" },
+              { icon: FaLinkedin, href: "https://linkedin.com/in/Anshulsharma-8386ansh", label: "LinkedIn" },
+              { icon: FaMedium, href: "https://medium.com/@anshulsharmacodes", label: "Medium" },
+              { icon: FaKaggle, href: "https://www.kaggle.com/anshulsharmacodes", label: "Kaggle" }
+            ].map((social, index) => (
+              <a
+                key={index}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-full transition-all duration-300 bg-h1/10 text-h1 hover:bg-h1/20 hover:scale-110"
+                aria-label={`${social.label} Profile`}
+              >
+                <social.icon size={24} />
+              </a>
+            ))}
+          </MotionDiv>
+        </Card>
       </MotionDiv>
     </section>
   );

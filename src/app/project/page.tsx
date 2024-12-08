@@ -1,119 +1,88 @@
+"use client"
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Tooltip } from '@/components/ui/tooltip';
 import Image from 'next/image';
 
-function Projects() {
+export default function Projects() {
   return (
-    <div className="flex flex-col justify-center items-center px-6 py-16 mt-14 space-y-16 w-screen min-h-screen text-gray-900 bg-gradient-to-b from-gray-100 to-gray-200 md:px-20 lg:px-40">
+    <div className="flex flex-col justify-center items-center px-6 py-16 mt-14 space-y-16 w-screen min-h-screen bg-bc md:px-20 lg:px-40">
       {/* Section Title */}
-      <h2 className="mb-8 text-5xl font-bold text-gray-800 animate-fade-in">My Projects</h2>
+      <h2 className="mb-8 text-6xl font-bold tracking-tight text-center">
+        <span className="text-h1">My</span>{" "}
+        <span className="text-transparent bg-h2">Projects</span>
+      </h2>
 
       {/* Technical Projects Section */}
       <div className="space-y-16 w-full">
-        <h3 className="text-4xl font-semibold text-center text-gray-700">Technical Projects</h3>
+        <h3 className="text-4xl font-semibold text-center text-hm">
+          Technical Projects
+        </h3>
 
         {/* Medicine Chatbot using RAG and LLM */}
-        <Card className="transition-shadow duration-300 hover:shadow-xl">
+        <Card className="border-2 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 border-h2/20 bg-cc">
           <CardHeader>
-            <CardTitle className="text-2xl text-blue-700">Medicine Chatbot using RAG and LLM</CardTitle>
+            <CardTitle className="text-3xl font-bold text-h2">Medicine Chatbot using RAG and LLM</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex flex-col items-center space-y-6">
-              <Image 
-                src="/UI.png" 
-                alt="AI Healthcare Bot" 
-                width={600} 
-                height={400} 
-                className="rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
-              />
-              <p className="max-w-2xl text-xl text-center text-gray-600">
-                Developed an advanced Medicine Chatbot leveraging <span className="font-semibold text-blue-600">Retrieval-Augmented Generation (RAG)</span> and <span className="font-semibold text-blue-600">Large Language Models (LLMs)</span> to provide accurate, real-time medical information. The system integrates semantic search and word-to-word search capabilities to answer a wide range of medical queries.
+            <div className="flex flex-col items-center space-y-8">
+              <div className="relative w-full h-[450px] overflow-hidden rounded-xl shadow-lg">
+                <Image
+                  src="/chat.jpeg"
+                  alt="AI Healthcare Bot Interface"
+                  fill
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                  priority
+                />
+              </div>
+              <p className="max-w-3xl text-xl leading-relaxed text-center text-dm">
+                Developed an advanced Medicine Chatbot leveraging Retrieval-Augmented Generation (RAG) and Large Language Models (LLMs) to provide accurate, real-time medical information. The system integrates semantic search and word-to-word search capabilities to answer a wide range of medical queries with high precision.
               </p>
             </div>
           </CardContent>
         </Card>
 
-        {/* Lung Cancer Classification */}
-        {/* <Card className="transition-shadow duration-300 hover:shadow-xl">
-          <CardHeader>
-            <CardTitle className="text-2xl text-blue-700">Lung Cancer Classification using Machine Learning</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="flex flex-col items-center space-y-6">
-              <Image 
-                
-                alt="Lung Cancer Classification" 
-                width={600} 
-                height={400} 
-                className="rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
-              />
-              <p className="max-w-2xl text-xl text-center text-gray-600">
-                Applied <span className="font-semibold text-blue-600">unsupervised machine learning</span> to classify lung cancer using unlabelled data. The project utilized clustering and anomaly detection techniques to identify potential cancerous areas in CT and MRI scans.
-              </p>
-            </div>
-          </CardContent>
-        </Card> */}
-
-        {/* Brain Tumor Classification */}
-        {/* <Card className="transition-shadow duration-300 hover:shadow-xl">
-          <CardHeader>
-            <CardTitle className="text-2xl text-blue-700">Brain Tumor Classification using Machine Learning</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="flex flex-col items-center space-y-6">
-              <Image 
-                
-                alt="Brain Tumor Classification" 
-                width={600} 
-                height={400} 
-                className="rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
-              />
-              <p className="max-w-2xl text-xl text-center text-gray-600">
-                Developed a <span className="font-semibold text-blue-600">supervised machine learning</span> model to classify brain tumors in MRI scans using convolutional neural networks (CNN) for improved diagnostic accuracy.
-              </p>
-            </div>
-          </CardContent>
-        </Card> */}
-
         {/* Mathematical Models Section */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
           {/* Mathematical Model for Lung Cancer */}
-          <Card className="transition-shadow duration-300 hover:shadow-xl">
+          <Card className="h-full border-2 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border-h2/20 bg-cc">
             <CardHeader>
-              <CardTitle className="text-2xl text-blue-700">Mathematical Model for Lung Cancer</CardTitle>
+              <CardTitle className="text-2xl font-bold text-h2">Mathematical Model for Lung Cancer</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="flex flex-col items-center space-y-6">
-                <Image 
-                 src="/Lung.jpeg"  
-                  alt="Mathematical Model for Lung Cancer" 
-                  width={400} 
-                  height={300} 
-                  className="rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
-                />
-                <p className="text-lg text-center text-gray-600">
-                  Developed a <span className="font-semibold text-blue-600">mathematical model</span> to simulate cancer cell growth and optimize treatment strategies.
+                <div className="relative w-full h-[350px] overflow-hidden rounded-xl shadow-lg">
+                  <Image
+                    src="/lungs.jpeg"
+                    alt="Lung Cancer Research Visualization"
+                    fill
+                    className="object-cover transition-transform duration-500 hover:scale-105"
+                    priority
+                  />
+                </div>
+                <p className="text-lg leading-relaxed text-center text-dm">
+                  Developed a sophisticated mathematical model to simulate cancer cell growth patterns and optimize treatment strategies using differential equations and numerical methods.
                 </p>
               </div>
             </CardContent>
           </Card>
 
           {/* Mathematical Model for Brain Tumor */}
-          <Card className="transition-shadow duration-300 hover:shadow-xl">
+          <Card className="h-full border-2 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border-h2/20 bg-cc">
             <CardHeader>
-              <CardTitle className="text-2xl text-blue-700">Mathematical Model for Brain Tumor</CardTitle>
+              <CardTitle className="text-2xl font-bold text-h2">Mathematical Model for Brain Tumor</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="flex flex-col items-center space-y-6">
-                <Image 
-                 src="/Brain.jpeg"  
-                  alt="Mathematical Model for Brain Tumor" 
-                  width={400} 
-                  height={300} 
-                  className="rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
-                />
-                <p className="text-lg text-center text-gray-600">
-                  Created a <span className="font-semibold text-blue-600">mathematical model</span> for simulating tumor development and testing treatment effectiveness.
+                <div className="relative w-full h-[350px] overflow-hidden rounded-xl shadow-lg">
+                  <Image
+                    src="/brain.jpeg"
+                    alt="Brain Tumor Analysis Visualization"
+                    fill
+                    className="object-cover transition-transform duration-500 hover:scale-105"
+                    priority
+                  />
+                </div>
+                <p className="text-lg leading-relaxed text-center text-dm">
+                  Created an advanced mathematical model for simulating tumor development and testing treatment effectiveness using computational biology approaches.
                 </p>
               </div>
             </CardContent>
@@ -123,67 +92,75 @@ function Projects() {
 
       {/* Hardware Projects Section */}
       <div className="space-y-16 w-full">
-        <h3 className="text-4xl font-semibold text-center text-gray-700">Hardware Projects</h3>
+        <h3 className="text-4xl font-semibold text-center text-hm">
+          Hardware Projects
+        </h3>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           {/* Electronics Stethoscope */}
-          <Card className="transition-shadow duration-300 hover:shadow-xl">
+          <Card className="h-full border-2 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border-h2/20 bg-cc">
             <CardHeader>
-              <CardTitle className="text-2xl text-blue-700">Electronics Stethoscope</CardTitle>
+              <CardTitle className="text-2xl font-bold text-h2">Electronics Stethoscope</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="flex flex-col items-center space-y-6">
-                <Image 
-                  src="/Ste.jpeg" 
-                  alt="Electronics Stethoscope" 
-                  width={300} 
-                  height={200} 
-                  className="rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
-                />
-                <p className="text-lg text-center text-gray-600">
-                  Designed an <span className="font-semibold text-blue-600">electronic stethoscope</span> for enhanced medical diagnostics.
+                <div className="relative w-full h-[250px] overflow-hidden rounded-xl shadow-lg">
+                  <Image
+                    src="/ste.jpeg"
+                    alt="Electronic Medical Device"
+                    fill
+                    className="object-cover transition-transform duration-500 hover:scale-105"
+                    priority
+                  />
+                </div>
+                <p className="text-lg leading-relaxed text-center text-dm">
+                  Designed an innovative electronic stethoscope with digital signal processing for enhanced medical diagnostics and remote monitoring capabilities.
                 </p>
               </div>
             </CardContent>
           </Card>
 
           {/* Speaker Amplifier */}
-          <Card className="transition-shadow duration-300 hover:shadow-xl">
+          <Card className="h-full border-2 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border-h2/20 bg-cc">
             <CardHeader>
-              <CardTitle className="text-2xl text-blue-700">Speaker Amplifier</CardTitle>
+              <CardTitle className="text-2xl font-bold text-h2">Speaker Amplifier</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="flex flex-col items-center space-y-6">
-                <Image 
-                  src="/Amp.jpeg" 
-                  alt="Speaker Amplifier" 
-                  width={300} 
-                  height={200} 
-                  className="rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
-                />
-                <p className="text-lg text-center text-gray-600">
-                  Developed a <span className="font-semibold text-blue-600">high-quality amplifier</span> for superior audio performance.
+                <div className="relative w-full h-[250px] overflow-hidden rounded-xl shadow-lg">
+                  <Image
+                    src="/amp.jpeg"
+                    alt="Professional Audio Amplifier"
+                    fill
+                    className="object-cover transition-transform duration-500 hover:scale-105"
+                    priority
+                  />
+                </div>
+                <p className="text-lg leading-relaxed text-center text-dm">
+                  Developed a high-fidelity amplifier with advanced circuitry for superior audio performance and minimal distortion.
                 </p>
               </div>
             </CardContent>
           </Card>
 
           {/* Dual Power Supply */}
-          <Card className="transition-shadow duration-300 hover:shadow-xl">
+          <Card className="h-full border-2 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border-h2/20 bg-cc">
             <CardHeader>
-              <CardTitle className="text-2xl text-blue-700">Dual Power Supply</CardTitle>
+              <CardTitle className="text-2xl font-bold text-h2">Dual Power Supply</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="flex flex-col items-center space-y-6">
-                <Image 
-                  src="/Dual.jpeg" 
-                  alt="Dual Power Supply" 
-                  width={300} 
-                  height={200} 
-                  className="rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
-                />
-                <p className="text-lg text-center text-gray-600">
-                  Designed a <span className="font-semibold text-blue-600">dual power supply</span> using a single transformer for efficient power delivery.
+                <div className="relative w-full h-[250px] overflow-hidden rounded-xl shadow-lg">
+                  <Image
+                    src="/dual.jpeg"
+                    alt="Power Supply Unit"
+                    fill
+                    className="object-cover transition-transform duration-500 hover:scale-105"
+                    priority
+                  />
+                </div>
+                <p className="text-lg leading-relaxed text-center text-dm">
+                  Engineered a precision dual power supply using a single transformer, featuring voltage regulation and overload protection for reliable power delivery.
                 </p>
               </div>
             </CardContent>
@@ -193,5 +170,3 @@ function Projects() {
     </div>
   );
 }
-
-export default Projects;

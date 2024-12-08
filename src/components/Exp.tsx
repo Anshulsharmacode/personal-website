@@ -1,5 +1,7 @@
 import React from 'react';
-import { FaHospitalAlt, FaCalendarAlt } from 'react-icons/fa';
+import { FaCalendarAlt, FaBriefcaseMedical, FaStethoscope } from 'react-icons/fa';
+import { Card, CardHeader, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 
 const Experience: React.FC = () => {
   const experiences = [
@@ -13,7 +15,7 @@ const Experience: React.FC = () => {
         "Special attention was given to the application of AI in medical imaging, understanding its significance in providing faster and more accurate diagnoses.",
         "Extensively explored the role of AI in automated image analysis."
       ],
-      icon: <FaHospitalAlt className="text-5xl text-blue-500" />
+      icon: <FaBriefcaseMedical className="w-8 h-8 text-h2" />
     },
     {
       hospital: "V-ONE Hospital",
@@ -25,47 +27,52 @@ const Experience: React.FC = () => {
         "Focused on exploring AI-driven advancements in MRI imaging, particularly in automating image recognition and reducing human error in diagnostics.",
         "Analyzed case studies on how machine learning models are trained to detect anomalies in scans."
       ],
-      icon: <FaHospitalAlt className="text-5xl text-green-500" />
+      icon: <FaStethoscope className="w-8 h-8 text-h2" />
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 text-gray-900 py-16">
-      <div className="container mx-auto px-6 lg:px-12">
-        <h2 className="text-5xl font-bold text-center mb-16 text-gray-800">
-          Experience
+    <section className="px-4 py-16 min-h-screen bg-bc sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <h2 className="mb-16 text-5xl font-bold text-center">
+          <span className="text-h1">Hospital</span>{" "}
+          <span className="text-h2">Experience</span>
         </h2>
 
-        <div className="space-y-16">
-          {experiences.map((exp, index) => (
-            <div 
-              key={exp.hospital}  // Using a unique key for each experience
-              className="bg-white p-8 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
-            >
-              <div className="flex items-center space-x-6 mb-8">
-                <div className="bg-gray-100 p-4 rounded-full">
-                  {exp.icon}
-                </div>
-                <div>
-                  <h3 className="text-3xl font-semibold text-gray-800">{exp.hospital}</h3>
-                  <div className="flex items-center text-gray-600 mt-2">
-                    <FaCalendarAlt className="mr-2" /> <span className="text-lg">{exp.duration}</span>
+        <div className="grid gap-8 md:grid-cols-1 lg:gap-12">
+          {experiences.map((exp) => (
+            <Card key={exp.hospital} className="backdrop-blur-sm transition-all duration-300 bg-cc/5 border-h1/20 hover:border-h1/40">
+              <CardHeader>
+                <div className="flex gap-4 items-center">
+                  <div className="p-3 rounded-full bg-h1/10 text-h1">
+                    {exp.icon}
+                  </div>
+                  <div className="space-y-1">
+                    <h3 className="text-2xl font-semibold text-hm">{exp.hospital}</h3>
+                    <div className="flex items-center text-dm/80">
+                      <FaCalendarAlt className="mr-2 w-4 h-4" />
+                      <Badge variant="outline" className="text-dm border-h1/20">
+                        {exp.duration}
+                      </Badge>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <ul className="space-y-4">
-                {exp.description.map((item, i) => (
-                  <li key={i} className="text-lg text-gray-700 flex items-start">
-                    <span className="text-blue-500 mr-2">•</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-4">
+                  {exp.description.map((item, i) => (
+                    <li key={i} className="flex gap-3 text-dm/90">
+                      <span className="text-h2">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

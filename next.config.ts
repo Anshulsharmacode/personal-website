@@ -19,10 +19,23 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: "www.google.com",
       },
-      // Add other domains as needed 
+      {
+        protocol: 'https',
+        hostname: 'fonts.googleapis.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'fonts.gstatic.com',
+      }
     ],
-}
-  /* config options here */
+  },
+  experimental: {
+    // Removed fontLoaders as it does not exist in type 'ExperimentalConfig'
+  },
+  webpack: (config) => {
+    config.resolve.fallback = { fs: false };
+    return config;
+  }
 };
 
 export default nextConfig;

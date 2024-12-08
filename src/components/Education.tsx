@@ -1,96 +1,75 @@
-// import React from 'react';
-// import { FaSchool, FaUniversity, FaGraduationCap } from 'react-icons/fa';
-// import { motion } from 'framer-motion';
+"use client"
+import React from 'react';
+import { FaSchool, FaUniversity, FaGraduationCap } from 'react-icons/fa';
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
-// const Education: React.FC = () => {
-//   const educationData = [
-//     {
-//       icon: <FaSchool className="w-8 h-8 text-blue-500" />,
-//       school: "Saraswati Vidya Mandir, Shujalpur",
-//       degree: "10th Class",
-//       year: "2019",
-//       result: "70%",
-//     },
-//     {
-//       icon: <FaGraduationCap className="w-8 h-8 text-blue-500" />,
-//       school: "Saraswati Vidya Mandir, Shujalpur",
-//       degree: "12th Class",
-//       year: "2021",
-//       result: "73%",
-//     },
-//     {
-//       icon: <FaUniversity className="w-8 h-8 text-blue-500" />,
-//       school: "Shri G.S. Institute of Technology, Indore",
-//       degree: "B.Tech in Biomedical Engineering",
-//       year: "2021 - 2025",
-//       result: "6.0 CGPA",
-//     },
-//   ];
+const Education: React.FC = () => {
+  const educationData = [
+    {
+      icon: <FaSchool className="w-10 h-10 text-h2" />,
+      school: "Saraswati Vidya Mandir, Shujalpur",
+      degree: "10th Class",
+      year: "2019",
+      result: "70%",
+    },
+    {
+      icon: <FaGraduationCap className="w-10 h-10 text-h2" />,
+      school: "Saraswati Vidya Mandir, Shujalpur",
+      degree: "12th Class", 
+      year: "2021",
+      result: "73%",
+    },
+    {
+      icon: <FaUniversity className="w-10 h-10 text-h2" />,
+      school: "Shri G.S. Institute of Technology, Indore",
+      degree: "B.Tech in Biomedical Engineering",
+      year: "2021 - 2025",
+      result: "6.0 CGPA",
+    },
+  ];
 
-//   return (
-//     <div className="py-16 bg-white">
-//       <div className="container px-4 mx-auto md:px-8 lg:px-12">
-//         <h2 className="mb-12 text-3xl font-bold text-center text-gray-800 md:text-4xl">Educational Journey</h2>
-//         {/* Responsive Grid Layout */}
-//         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-//           {educationData.map((edu, index) => (
-//             <motion.div
-//               key={index}
-//               initial={{ opacity: 0, rotateY: -90 }}
-//               animate={{ opacity: 1, rotateY: 0 }}
-//               transition={{ duration: 0.8, delay: index * 0.2 }}
-//               className="flex flex-col justify-between items-center p-6 bg-gradient-to-br from-white to-gray-100 rounded-xl shadow-2xl transition-all duration-300 transform md:p-8 hover:scale-105"
-//               style={{
-//                 perspective: '1000px',
-//                 transformStyle: 'preserve-3d',
-//               }}
-//             >
-//               <div
-//                 className="p-4 mb-6 bg-blue-100 rounded-full shadow-inner"
-//                 style={{
-//                   transform: 'translateZ(20px)',
-//                 }}
-//               >
-//                 {edu.icon}
-//               </div>
-//               <h3
-//                 className="mb-3 text-xl font-bold text-center text-gray-800 md:text-2xl"
-//                 style={{
-//                   transform: 'translateZ(15px)',
-//                 }}
-//               >
-//                 {edu.degree}
-//               </h3>
-//               <p
-//                 className="mb-2 text-center text-gray-600 text-md md:text-lg"
-//                 style={{
-//                   transform: 'translateZ(10px)',
-//                 }}
-//               >
-//                 {edu.school}
-//               </p>
-//               <p
-//                 className="mb-2 text-sm text-center text-gray-500 md:text-md"
-//                 style={{
-//                   transform: 'translateZ(5px)',
-//                 }}
-//               >
-//                 {edu.year}
-//               </p>
-//               <p
-//                 className="text-lg font-semibold text-center text-blue-600"
-//                 style={{
-//                   transform: 'translateZ(10px)',
-//                 }}
-//               >
-//                 {edu.result}
-//               </p>
-//             </motion.div>
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
+  return (
+    <section className="py-20 bg-bc">
+      <div className="container px-4 mx-auto">
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className="mb-16 text-5xl font-bold">
+            <span className="text-h1">Educational</span>{" "}
+            <span className="text-h2">Journey</span>
+          </h2>
 
-// export default Education;
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {educationData.map((edu, index) => (
+              <div key={index}>
+                <Card className="overflow-hidden h-full border shadow-lg transition-all duration-300 border-cc group bg-cc hover:shadow-2xl">
+                  <CardHeader className="flex justify-center items-center pt-8">
+                    <div className="p-4 rounded-full transition-transform text-h2 duration-300 bg-cc group-hover:scale-110">
+                      {edu.icon}
+                    </div>
+                  </CardHeader>
+                  <CardContent className="p-6 text-center">
+                    <h3 className="mb-3 text-2xl font-bold text-h1">
+                      {edu.degree}
+                    </h3>
+                    <p className="mb-4 text-lg text-dm">
+                      {edu.school}
+                    </p>
+                    <div className="flex justify-between items-center text-sm text-dm">
+                      <span className="px-3 py-1 rounded-full bg-h2/20">
+                        {edu.year}
+                      </span>
+                      <span className="px-3 py-1 font-semibold text-h2">
+                        {edu.result}
+                      </span>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Education;
