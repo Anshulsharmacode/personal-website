@@ -1,117 +1,112 @@
 "use client";
 
-import { FaGithub, FaLinkedin, FaEnvelope, FaKaggle, FaMedium } from "react-icons/fa";
-import { useState, useEffect } from "react";
-import dynamic from "next/dynamic";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaKaggle,
+  FaMedium,
+} from "react-icons/fa";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 
-const MotionDiv = dynamic(
-  () => import("framer-motion").then((mod) => mod.motion.div),
-  { ssr: false }
-);
+import { Typewriter } from 'react-simple-typewriter';
+import { motion } from 'framer-motion';
+
+// const redHatDisplay = Red_Hat_Display({ subsets: ["latin"] });
 
 const Hero = () => {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  const fadeInUpVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
-
-  if (!isMounted) {
-    return null;
-  }
-
   return (
-    <section className="flex overflow-hidden relative justify-center items-center w-full min-h-screen bg-bc">
-      <div className="absolute inset-0 bg-gradient-to-b opacity-50 from-bc/50 to-bc" />
-      
-      <MotionDiv
-        initial="hidden"
-        animate="visible"
-        variants={{
-          visible: {
-            transition: {
-              staggerChildren: 0.2,
+    <section className="flex overflow-hidden relative justify-center items-center w-full h-screen bg-none">
+      <div className="flex relative z-10 flex-col justify-center items-center max-w-3xl h-full text-center">
+        <div className="mb-4">
+          <h1
+            className="text-5xl font-bold tracking-tight text-center text-h1 sm:text-6xl md:text-7xl font-signature"
+          >
+            <Typewriter
+              words={['Anshul Sharma']}
+              cursor
+              cursorStyle=''
+              typeSpeed={100}
+             
+            />
+          </h1>
+        </div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 2, duration: 0.8 }}
+          className="mb-6 text-lg font-light text-center font-raleway md:text-xl"
+        >
+          <span className="text-gray-500">
+            Biomedical Engineering and Software Developer
+          </span>
+        </motion.div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 2.5, duration: 0.8 }}
+          className="flex flex-col gap-2 justify-center items-center mb-6 sm:flex-row"
+        >
+          <Button
+            variant="outline"
+            className="text-sm border transition-all duration-300 group font-raleway border-h2/20 hover:border-h2/40 hover:bg-h2/10 text-dm"
+            onClick={() => window.location.href = '/project'}
+          >
+            <span className="mr-2">View Projects</span>→
+          </Button>
+
+          <Button 
+            className="text-sm transition-all duration-300 font-raleway bg-h2 hover:bg-h2/90 text-bc"
+            onClick={() => window.location.href = '/contact'}
+          >
+            <span className="mr-2">Get in Touch</span>
+            <FaEnvelope className="w-4 h-4" />
+          </Button>
+        </motion.div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 3, duration: 0.8 }}
+          className="flex justify-center items-center space-x-3"
+        >
+          {[
+            {
+              icon: FaGithub,
+              href: "https://github.com/Anshulsharmacode",
+              label: "GitHub",
             },
-          },
-        }}
-        className="relative z-10 px-4 mx-auto max-w-5xl"
-      >
-        <Card className="p-8 backdrop-blur-lg bg-cc/5 border-h1/20">
-          <MotionDiv className="mb-8 text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-transparent bg-clip-text sm:text-5xl md:text-6xl lg:text-7xl bg-h1">
-              {Array.from("Anshul Sharma").map((char, index) => (
-                <MotionDiv
-                  key={index}
-                  variants={fadeInUpVariants}
-                  className="inline-block"
-                >
-                  <span className="inline-block pb-2">
-                    {char === " " ? "\u00A0" : char}
-                  </span>
-                </MotionDiv>
-              ))}
-            </h1>
-          </MotionDiv>
-
-          <MotionDiv
-            variants={fadeInUpVariants}
-            className="mb-8 text-2xl font-light text-center text-dm"
-          >
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-h2 to-hm">
-              Biomedical Engineer & AI Machine Learning 
-            </span>
-          </MotionDiv>
-
-          <MotionDiv
-            variants={fadeInUpVariants}
-            className="flex flex-col gap-4 justify-center mb-8 sm:flex-row"
-          >
-            <Button
-              variant="outline"
-              className="group border-h1 hover:bg-h1/20 text-dm"
+            {
+              icon: FaLinkedin,
+              href: "https://linkedin.com/in/anshul-sharma-8386ansh",
+              label: "LinkedIn",
+            },
+            {
+              icon: FaMedium,
+              href: "https://medium.com/@anshulsharma8386",
+              label: "Medium",
+            },
+            {
+              icon: FaKaggle,
+              href: "https://www.kaggle.com/anshulsharma8386",
+              label: "Kaggle",
+            },
+          ].map((social, index) => (
+            <a
+              key={index}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block p-2 rounded-full bg-h1/10 text-h1 hover:bg-h1/20"
+              aria-label={`${social.label} Profile`}
             >
-              <span className="mr-2">View Projects</span>
-              <span className="transition-transform group-hover:translate-x-1">→</span>
-            </Button>
-            <Button
-              className="bg-gradient-to-r from-h1 to-h2 hover:opacity-90 text-bc"
-            >
-              <span className="mr-2">Get in Touch</span>
-              <FaEnvelope className="w-4 h-4" />
-            </Button>
-          </MotionDiv>
-
-          <MotionDiv
-            variants={fadeInUpVariants}
-            className="flex justify-center space-x-6"
-          >
-            {[
-              { icon: FaGithub, href: "https://github.com/Anshulsharmacodes", label: "GitHub" },
-              { icon: FaLinkedin, href: "https://linkedin.com/in/Anshulsharma-8386ansh", label: "LinkedIn" },
-              { icon: FaMedium, href: "https://medium.com/@anshulsharmacodes", label: "Medium" },
-              { icon: FaKaggle, href: "https://www.kaggle.com/anshulsharmacodes", label: "Kaggle" }
-            ].map((social, index) => (
-              <a
-                key={index}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-full transition-all duration-300 bg-h1/10 text-h1 hover:bg-h1/20 hover:scale-110"
-                aria-label={`${social.label} Profile`}
-              >
-                <social.icon size={24} />
-              </a>
-            ))}
-          </MotionDiv>
-        </Card>
-      </MotionDiv>
+              <social.icon size={20} />
+            </a>
+          ))}
+        </motion.div>
+      </div>
     </section>
   );
 };

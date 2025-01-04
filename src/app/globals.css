@@ -5,13 +5,14 @@
 @layer base {
   :root {
     --foreground: #000;
-    --font-montserrat: 'Montserrat', sans-serif;
-    --font-raleway: 'Raleway', sans-serif;
+    --font-crimson: var(--font-crimson);
+    --font-montserrat: "Montserrat", sans-serif;
+    --font-raleway: "Raleway", sans-serif;
   }
 }
 
 body {
-  font-family: var(--font-montserrat), var(--font-raleway), sans-serif;
+  font-family: var(--font-crimson), var(--font-montserrat), var(--font-raleway), sans-serif;
 }
 
 @layer utilities {

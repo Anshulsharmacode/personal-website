@@ -1,199 +1,276 @@
-import { FaMicroscope, FaRobot, FaHeartbeat, FaBrain, FaCloud, FaCode } from "react-icons/fa";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { SiTypescript, SiJupyter, SiGooglecolab, SiKaggle } from 'react-icons/si';
-import { FaPython, FaJs, FaReact } from 'react-icons/fa';
+
+import {
+  FaRobot,
+  FaHeartbeat,
+  FaBrain,
+  FaCloud,
+  FaCode,
+  FaLayerGroup,
+  FaTools,
+} from "react-icons/fa";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import {
+  SiTypescript,
+  SiJupyter,
+  SiGooglecolab,
+  SiKaggle,
+  SiGit,
+  SiXcode,
+  SiNextdotjs,
+  SiNestjs,
+  SiPython,
+  SiNodedotjs,
+  SiAmazon,
+  SiTurso,
+  SiMongodb,
+} from "react-icons/si";
+import { FaReact } from "react-icons/fa";
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-bc">
-      <div className="container px-6 py-16 mx-auto">
-        {/* About Me Section */}
-        <section id="about" className="mb-20 animate-fade-in">
-          <h1 className="mb-8 text-6xl font-bold tracking-tight text-h1">About <span className="text-h2">Me</span></h1>
-          <div className="space-y-6 text-lg">
-            <p className="leading-relaxed text-hm">
-              Hi! I&apos;m <span className="font-semibold text-h2">Anshul Sharma</span>, a final-year Biomedical Engineering student driven by a passion for
-              innovating healthcare technologies. I focus on integrating Artificial Intelligence (AI) and
-              Machine Learning (ML) into medical systems to make diagnostics more accurate, efficient, and accessible.
-            </p>
-            <p className="leading-relaxed text-hm">
-              My academic journey is defined by curiosity and a commitment to solving real-world challenges.
-              Beyond healthcare, I delve into general AI, natural language processing (NLP), and
-              generative AI to explore its potential in education, automation, and more.
-            </p>
+    <div className="relative pt-32 min-h-screen">
+      <div className="fixed inset-0 w-full h-full bg-gradient-to-b opacity-80 from-bc via-bc/90 to-bc" />
+      <div className="fixed inset-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(96,165,250,0.1)_0%,transparent_65%)]" />
+
+      <div className="relative z-1">
+        <section className="py-24 bg-none font-montserrat">
+          <div className="container px-4 mx-auto">
+            <div className="mx-auto max-w-4xl">
+              {/* About Section */}
+              <h1 className="mb-16 text-5xl font-bold tracking-tight text-center">
+                <span className="text-h1">About</span>{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-h2 to-h1">
+                  Me
+                </span>
+              </h1>
+
+              <Card className="mb-20 backdrop-blur-lg transition-all duration-300 bg-cc/5 border-h1/20 hover:border-h1/30">
+                <CardContent className="p-8">
+                  <p className="leading-relaxed text-hm">
+                    Hi! I&apos;m{" "}
+                    <span className="font-semibold text-h2">Anshul Sharma</span>
+                    , a Software Developer with a unique background in Biomedical Engineering. 
+                    I combine my technical knowledge in full-stack development with my understanding of healthcare systems 
+                    to create innovative digital solutions.
+                  </p>
+                  <p className="mt-4 leading-relaxed text-hm">
+                    My diverse skill set spans modern web technologies and API development. 
+                    I&apos;m passionate about building scalable applications that make an impact.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Expertise Section */}
+              <div className="space-y-20">
+                <h2 className="text-3xl font-bold tracking-tight text-h1">Technical Expertise</h2>
+                <div className="grid grid-cols-1 gap-8 sm:gap-10 md:grid-cols-2 lg:grid-cols-3">
+                  {/* Web Development */}
+                  <Card className="backdrop-blur-lg transition-all duration-300 bg-cc/5 border-h1/20 hover:border-h1/30">
+                    <CardHeader>
+                      <div className="flex gap-4 items-center">
+                        <div className="p-3 rounded-full bg-h1/10 text-h1">
+                          <FaCode className="w-8 h-8" />
+                        </div>
+                        <div className="space-y-1">
+                          <h3 className="text-2xl font-semibold text-h1">Web Development</h3>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="text-dm/90">
+                      Proficient in React, Next.js, and TypeScript. Building responsive and 
+                      accessible web applications with clean code.
+                    </CardContent>
+                  </Card>
+
+                  {/* API Development */}
+                  <Card className="backdrop-blur-lg transition-all duration-300 bg-cc/5 border-h1/20 hover:border-h1/30">
+                    <CardHeader>
+                      <div className="flex gap-4 items-center">
+                        <div className="p-3 rounded-full bg-h1/10 text-h1">
+                          <FaCloud className="w-8 h-8" />
+                        </div>
+                        <div className="space-y-1">
+                          <h3 className="text-2xl font-semibold text-h1">API Development</h3>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="text-dm/90">
+                      Building RESTful APIs and managing databases. Experience with Node.js, 
+                      Express, and database systems.
+                    </CardContent>
+                  </Card>
+
+                  {/* Healthcare Tech */}
+                  <Card className="backdrop-blur-lg transition-all duration-300 bg-cc/5 border-h1/20 hover:border-h1/30">
+                    <CardHeader>
+                      <div className="flex gap-4 items-center">
+                        <div className="p-3 rounded-full bg-h1/10 text-h1">
+                          <FaHeartbeat className="w-8 h-8" />
+                        </div>
+                        <div className="space-y-1">
+                          <h3 className="text-2xl font-semibold text-h1">Healthcare Tech</h3>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="text-dm/90">
+                      Building healthcare applications and medical imaging systems. 
+                      Experience with medical data standards and processing.
+                    </CardContent>
+                  </Card>
+
+                  {/* AI/ML Integration */}
+                  <Card className="backdrop-blur-lg transition-all duration-300 bg-cc/5 border-h1/20 hover:border-h1/30">
+                    <CardHeader>
+                      <div className="flex gap-4 items-center">
+                        <div className="p-3 rounded-full bg-h1/10 text-h1">
+                          <FaBrain className="w-8 h-8" />
+                        </div>
+                        <div className="space-y-1">
+                          <h3 className="text-2xl font-semibold text-h1">AI/ML Integration</h3>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="text-dm/90">
+                      Basic integration of ML models into web apps using TensorFlow.js. 
+                      Building AI-powered features for better user experiences.
+                    </CardContent>
+                  </Card>
+
+                  {/* Full Stack Development */}
+                  <Card className="backdrop-blur-lg transition-all duration-300 bg-cc/5 border-h1/20 hover:border-h1/30">
+                    <CardHeader>
+                      <div className="flex gap-4 items-center">
+                        <div className="p-3 rounded-full bg-h1/10 text-h1">
+                          <FaLayerGroup className="w-8 h-8" />
+                        </div>
+                        <div className="space-y-1">
+                          <h3 className="text-2xl font-semibold text-h1">Full Stack</h3>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="text-dm/90">
+                      End-to-end development with frontend and backend expertise. 
+                      Database design and deployment experience.
+                    </CardContent>
+                  </Card>
+
+                  {/* DevOps & Tools */}
+                  <Card className="backdrop-blur-lg transition-all duration-300 bg-cc/5 border-h1/20 hover:border-h1/30">
+                    <CardHeader>
+                      <div className="flex gap-4 items-center">
+                        <div className="p-3 rounded-full bg-h1/10 text-h1">
+                          <FaTools className="w-8 h-8" />
+                        </div>
+                        <div className="space-y-1">
+                          <h3 className="text-2xl font-semibold text-h1">DevOps & Tools</h3>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="text-dm/90">
+                      Working with Git, CI/CD, Docker, and cloud platforms. 
+                      Managing modern development workflows.
+                    </CardContent>
+                  </Card>
+
+                  {/* Generative AI */}
+                  <Card className="backdrop-blur-lg transition-all duration-300 bg-cc/5 border-h1/20 hover:border-h1/30">
+                    <CardHeader>
+                      <div className="flex gap-4 items-center">
+                        <div className="p-3 rounded-full bg-h1/10 text-h1">
+                          <FaRobot className="w-8 h-8" />
+                        </div>
+                        <div className="space-y-1">
+                          <h3 className="text-2xl font-semibold text-h1">Generative AI</h3>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="text-dm/90">
+                      Building intelligent models for content generation, healthcare applications, and automated workflows powered by AI.
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+
+              {/* Vision Section */}
+              <div className="mt-32 space-y-8">
+                <h2 className="text-3xl font-bold tracking-tight text-h1">Vision</h2>
+                <Card className="backdrop-blur-lg transition-all duration-300 bg-cc/5 border-h1/20 hover:border-h1/30">
+                  <CardContent className="p-8 text-dm/90">
+                    As a Software Developer with a Biomedical Engineering background, I aim to 
+                    bridge healthcare and technology through innovative web solutions. I focus on 
+                    building efficient applications that impact both healthcare and web development.
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Skills & Tools Section */}
+              <div className="mt-32 space-y-8">
+                <h2 className="text-3xl font-bold tracking-tight text-h1">Skills & Tools</h2>
+                <Card className="backdrop-blur-lg transition-all duration-300 bg-cc/5 border-h1/20 hover:border-h1/30">
+                  <CardContent className="p-8">
+                    <div className="grid grid-cols-3 gap-8 md:grid-cols-4 lg:grid-cols-6">
+                      <div className="flex flex-col gap-2 items-center">
+                        <SiKaggle className="w-12 h-12 text-h1" />
+                        <span className="text-sm text-dm/90">Kaggle</span>
+                      </div>
+                      <div className="flex flex-col gap-2 items-center">
+                        <SiGit className="w-12 h-12 text-h1" />
+                        <span className="text-sm text-dm/90">Git</span>
+                      </div>
+                      <div className="flex flex-col gap-2 items-center">
+                        <SiXcode className="w-12 h-12 text-h1" />
+                        <span className="text-sm text-dm/90">VS Code</span>
+                      </div>
+                      <div className="flex flex-col gap-2 items-center">
+                        <FaReact className="w-12 h-12 text-h1" />
+                        <span className="text-sm text-dm/90">React</span>
+                      </div>
+                      <div className="flex flex-col gap-2 items-center">
+                        <SiNextdotjs className="w-12 h-12 text-h1" />
+                        <span className="text-sm text-dm/90">Next.js</span>
+                      </div>
+                      <div className="flex flex-col gap-2 items-center">
+                        <SiNestjs className="w-12 h-12 text-h1" />
+                        <span className="text-sm text-dm/90">Nest.js</span>
+                      </div>
+                      <div className="flex flex-col gap-2 items-center">
+                        <SiPython className="w-12 h-12 text-h1" />
+                        <span className="text-sm text-dm/90">Python</span>
+                      </div>
+                      <div className="flex flex-col gap-2 items-center">
+                        <SiNodedotjs className="w-12 h-12 text-h1" />
+                        <span className="text-sm text-dm/90">Node.js</span>
+                      </div>
+                      <div className="flex flex-col gap-2 items-center">
+                        <SiTypescript className="w-12 h-12 text-h1" />
+                        <span className="text-sm text-dm/90">Typescript</span>
+                      </div>
+                      <div className="flex flex-col gap-2 items-center">
+                        <SiAmazon className="w-12 h-12 text-h1" />
+                        <span className="text-sm text-dm/90">AWS</span>
+                      </div>
+                      <div className="flex flex-col gap-2 items-center">
+                        <SiTurso className="w-12 h-12 text-h1" />
+                        <span className="text-sm text-dm/90">Cursor</span>
+                      </div>
+                      <div className="flex flex-col gap-2 items-center">
+                        <SiMongodb className="w-12 h-12 text-h1" />
+                        <span className="text-sm text-dm/90">MongoDB</span>
+                      </div>
+                      <div className="flex flex-col gap-2 items-center">
+                        <SiJupyter className="w-12 h-12 text-h1" />
+                        <span className="text-sm text-dm/90">Jupyter</span>
+                      </div>
+                      <div className="flex flex-col gap-2 items-center">
+                        <SiGooglecolab className="w-12 h-12 text-h1" />
+                        <span className="text-sm text-dm/90">Colab</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
           </div>
-        </section>
-
-        {/* Education Section */}
-        <section id="education" className="mb-20">
-          <h2 className="mb-8 text-4xl font-bold tracking-tight text-h2">Education</h2>
-          <Card className="transition-all duration-500 transform bg-cc hover:shadow-2xl hover:-translate-y-1">
-            <CardContent className="p-8">
-              <p className="text-lg leading-relaxed text-hm">
-                As a Biomedical Engineering student, I&apos;ve developed expertise in medical devices,
-                biosignal processing, and AI-driven healthcare technologies. My projects have provided
-                hands-on experience with advanced tools like Python, TensorFlow, and MATLAB to solve diagnostic challenges.
-              </p>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* Expertise Section */}
-        <section id="expertise" className="mb-20">
-          <h2 className="mb-12 text-4xl font-bold tracking-tight text-h2">I Am Working With</h2>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {/* AI in Healthcare */}
-            <Card className="border-t-4 transition-all duration-500 transform bg-cc hover:shadow-2xl hover:-translate-y-2 border-h2">
-              <CardHeader className="p-6">
-                <CardTitle className="flex items-center text-xl text-h2">
-                  <FaMicroscope className="mr-4 w-8 h-8 text-h2" />
-                  AI in Healthcare
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-6 pt-0">
-                <p className="leading-relaxed text-hm">
-                  Leveraging AI and ML for smarter diagnostic tools, including disease detection, predictive analytics,
-                  and personalized medicine. I have worked on optimizing medical imaging techniques like MRI and CT scans.
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Medical Imaging */}
-            <Card className="border-t-4 transition-all duration-500 transform bg-cc hover:shadow-2xl hover:-translate-y-2 border-h2">
-              <CardHeader className="p-6">
-                <CardTitle className="flex items-center text-xl text-h2">
-                  <FaHeartbeat className="mr-4 w-8 h-8 text-h2" />
-                  Medical Imaging
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-6 pt-0">
-                <p className="leading-relaxed text-hm">
-                  Specializing in medical imaging technologies, focusing on improving diagnostic accuracy through
-                  deep learning models like U-Net and GANs. My work aims to enhance MRI and CT scan interpretations.
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* General AI & NLP */}
-            <Card className="border-t-4 transition-all duration-500 transform bg-cc hover:shadow-2xl hover:-translate-y-2 border-h2">
-              <CardHeader className="p-6">
-                <CardTitle className="flex items-center text-xl text-h2">
-                  <FaBrain className="mr-4 w-8 h-8 text-h2" />
-                  General AI & NLP
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-6 pt-0">
-                <p className="leading-relaxed text-hm">
-                  Exploring Large Language Models (LLMs) like GPT and Retrieval-Augmented Generation (RAG) for
-                  document analysis, question answering, and chat-based applications in healthcare and beyond.
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Deep Learning & Neural Networks */}
-            <Card className="border-t-4 transition-all duration-500 transform bg-cc hover:shadow-2xl hover:-translate-y-2 border-h2">
-              <CardHeader className="p-6">
-                <CardTitle className="flex items-center text-xl text-h2">
-                  <FaRobot className="mr-4 w-8 h-8 text-h2" />
-                  Deep Learning
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-6 pt-0">
-                <p className="leading-relaxed text-hm">
-                  Deep learning is at the core of many AI applications. I work with CNNs for
-                  image processing, RNNs for time-series data, and Autoencoders for unsupervised learning.
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Machine Learning Algorithms */}
-            <Card className="border-t-4 transition-all duration-500 transform bg-cc hover:shadow-2xl hover:-translate-y-2 border-h2">
-              <CardHeader className="p-6">
-                <CardTitle className="flex items-center text-xl text-h2">
-                  <FaCloud className="mr-4 w-8 h-8 text-h2" />
-                  Machine Learning
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-6 pt-0">
-                <p className="leading-relaxed text-hm">
-                  Proficient in various ML algorithms such as Random Forests, SVMs, K-Means Clustering, and XGBoost
-                  for tasks ranging from regression to classification and clustering.
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Generative AI */}
-            <Card className="border-t-4 transition-all duration-500 transform bg-cc hover:shadow-2xl hover:-translate-y-2 border-h2">
-              <CardHeader className="p-6">
-                <CardTitle className="flex items-center text-xl text-h2">
-                  <FaCode className="mr-4 w-8 h-8 text-h2" />
-                  Generative AI
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-6 pt-0">
-                <p className="leading-relaxed text-hm">
-                  Working with Generative Adversarial Networks (GANs) and other generative models to create new content,
-                  such as generating images from text and synthetic data generation.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* Skills & Tools Section */}
-        <section id="skills" className="mb-20">
-          <h2 className="mb-12 text-4xl font-bold tracking-tight text-center text-h2">Skills & Tools</h2>
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-            {/* Skills Cards */}
-            <Card className="p-8 text-center transition-all duration-500 transform bg-cc hover:shadow-2xl hover:-translate-y-2">
-              <FaPython className="mx-auto mb-4 text-6xl transition-transform text-h2 hover:scale-110" />
-              <h3 className="font-semibold text-hm">Python</h3>
-            </Card>
-
-            <Card className="p-8 text-center transition-all duration-500 transform bg-cc hover:shadow-2xl hover:-translate-y-2">
-              <SiTypescript className="mx-auto mb-4 text-6xl transition-transform text-h2 hover:scale-110" />
-              <h3 className="font-semibold text-hm">TypeScript</h3>
-            </Card>
-
-            <Card className="p-8 text-center transition-all duration-500 transform bg-cc hover:shadow-2xl hover:-translate-y-2">
-              <FaJs className="mx-auto mb-4 text-6xl transition-transform text-h2 hover:scale-110" />
-              <h3 className="font-semibold text-hm">JavaScript</h3>
-            </Card>
-
-            <Card className="p-8 text-center transition-all duration-500 transform bg-cc hover:shadow-2xl hover:-translate-y-2">
-              <FaReact className="mx-auto mb-4 text-6xl transition-transform text-h2 hover:scale-110" />
-              <h3 className="font-semibold text-hm">React.js</h3>
-            </Card>
-
-            <Card className="p-8 text-center transition-all duration-500 transform bg-cc hover:shadow-2xl hover:-translate-y-2">
-              <SiKaggle className="mx-auto mb-4 text-6xl transition-transform text-h2 hover:scale-110" />
-              <h3 className="font-semibold text-hm">Kaggle</h3>
-            </Card>
-
-            <Card className="p-8 text-center transition-all duration-500 transform bg-cc hover:shadow-2xl hover:-translate-y-2">
-              <SiJupyter className="mx-auto mb-4 text-6xl transition-transform text-h2 hover:scale-110" />
-              <h3 className="font-semibold text-hm">Jupyter</h3>
-            </Card>
-
-            <Card className="p-8 text-center transition-all duration-500 transform bg-cc hover:shadow-2xl hover:-translate-y-2">
-              <SiGooglecolab className="mx-auto mb-4 text-6xl transition-transform text-h2 hover:scale-110" />
-              <h3 className="font-semibold text-hm">Colab</h3>
-            </Card>
-          </div>
-        </section>
-
-        {/* Vision Section */}
-        <section id="vision" className="mb-16">
-          <h2 className="mb-8 text-4xl font-bold tracking-tight text-h2">Vision</h2>
-          <Card className="transition-all duration-500 transform bg-cc hover:shadow-2xl hover:-translate-y-1">
-            <CardContent className="p-8">
-              <p className="text-lg leading-relaxed text-hm">
-                I aspire to reshape healthcare with AI-powered tools that enhance patient care, accelerate diagnostics,
-                and support personalized treatments. My focus is on bridging technology and humanity, ensuring innovation
-                leads to equitable and impactful healthcare solutions for all.
-              </p>
-            </CardContent>
-          </Card>
         </section>
       </div>
     </div>

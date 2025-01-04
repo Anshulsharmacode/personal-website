@@ -1,22 +1,16 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Montserrat, Raleway } from "next/font/google";
-import Navbar from "@/components/Navbar"
-
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  variable: '--font-montserrat',
-  weight: ['300', '400', '500', '600', '700'],
-  display: 'swap',
-});
+import { Crimson_Text } from "next/font/google";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/fotter";
 
 
 
-const raleway = Raleway({
-  subsets: ['latin'], 
-  variable: '--font-raleway',
-  weight: ['300', '400', '500', '600', '700'],
-  display: 'swap',
+const crimsonText = Crimson_Text({
+  subsets: ["latin"],
+  variable: "--font-crimson",
+  weight: ["400", "600", "700"], // Adjusted to match the expected type
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -33,12 +27,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable}  ${raleway.variable} font-sans antialiased bg-bc min-h-screen`}
+        className={` ${crimsonText.variable} font-sans antialiased bg-bc min-h-screen`}
       >
-        <Navbar/>
-        <main className="flex-grow">
-          {children}
-        </main>
+        <Navbar />
+        <main className="flex-grow">{children}</main>
+        <Footer />
       </body>
     </html>
   );

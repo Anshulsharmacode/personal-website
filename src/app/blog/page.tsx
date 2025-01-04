@@ -1,14 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
-
-import { Montserrat } from "next/font/google";
 import { ArrowRight } from "lucide-react";
 
-const montserrat = Montserrat({ subsets: ["latin"] });
 interface BlogPost {
   thumbnail: string;
   title: string;
@@ -68,77 +64,77 @@ const BlogShowcase: React.FC = () => {
   }, [username, limit]);
 
   return (
-    <section
-      className={`w-full py-24 bg-color-2 text-color-3 ${montserrat.className}`}
-    >
-      <div className="container px-4 mx-auto sm:px-6 lg:px-8">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="mb-16 text-5xl font-bold text-center"
-        >
-          {/* <span className="text-color">Latest</span>{" "} */}
-          <span className="text-h1">Blos <span className="text-h2">Posts</span> </span>
-        </motion.h2>
+    <div className="relative min-h-screen pt-32">
+      <div className="fixed inset-0 w-full h-full bg-gradient-to-b from-bc via-bc/90 to-bc opacity-80" />
+      <div className="fixed inset-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(96,165,250,0.1)_0%,transparent_65%)]" />
 
-        {isLoading && (
-          <div className="text-xl text-center">Loading blog posts...</div>
-        )}
+      <div className="relative z-1">
+        <section className="py-24 bg-none font-montserrat">
+          <div className="container px-4 mx-auto">
+            <div className="mx-auto max-w-7xl">
+              <h2 className="mb-16 text-5xl font-bold text-center tracking-tight">
+                <span className="text-h1">Blog</span>{" "}
+                <span className="bg-gradient-to-r from-h2 to-h1 bg-clip-text text-transparent">
+                  Posts
+                </span>
+              </h2>
 
-        {error && (
-          <div className="text-xl text-center text-hm">{error}</div>
-        )}
+              {isLoading && (
+                <div className="text-xl text-center text-dm">
+                  Loading blog posts...
+                </div>
+              )}
 
-        {!isLoading && !error && (
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {blogPosts?.map((post: BlogPost, index: number) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card
-                  className="overflow-hidden h-full rounded-lg border shadow-lg transition-all duration-300 cursor-pointer group bg-cc hover:shadow-2xl border-color-4/20"
-                  onClick={() => window.open(post.link, "_blank")}
-                >
-                  <div className="overflow-hidden relative w-full h-48">
-                    <Image
-                      src={post.thumbnail}
-                      alt={post.title}
-                      layout="fill"
-                      objectFit="cover"
-                      className="transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t to-transparent from-hm via-dm/80"></div>
-                  </div>
-                  <CardContent className="p-6">
-                    <h3 className="flex items-center mb-2 text-xl font-semibold text-hm">
-                      {post.title}
-                    </h3>
-                    <p className="mb-4 text-sm text-dm">
-                      {post.subtitle}
-                    </p>
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm text-muted-foreground">
-                        {new Date(post.pubDate).toLocaleDateString()}
-                      </span>
-                      <div className="inline-flex items-center transition-colors duration-300 group text-hm hover:text-dm">
-                        <span className="mr-2 text-sm font-medium">
-                          Read More
-                        </span>
-                        <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              {error && (
+                <div className="text-xl text-center text-hm">{error}</div>
+              )}
+
+              {!isLoading && !error && (
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                  {blogPosts?.map((post: BlogPost, index: number) => (
+                    <Card
+                      key={index}
+                      className="group h-full backdrop-blur-lg bg-cc/5 border-h1/20 hover:border-h1/40 transition-all duration-500 hover:transform hover:-translate-y-1 cursor-pointer"
+                      onClick={() => window.open(post.link, "_blank")}
+                    >
+                      <div className="overflow-hidden relative w-full h-48">
+                        <Image
+                          src={post.thumbnail}
+                          alt={post.title}
+                          layout="fill"
+                          objectFit="cover"
+                          className="transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-bc via-bc/80 to-transparent"></div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+                      <CardContent className="p-6">
+                        <h3 className="flex items-center mb-2 text-xl font-semibold text-h1">
+                          {post.title}
+                        </h3>
+                        <p className="mb-4 text-sm text-dm/80">
+                          {post.subtitle}
+                        </p>
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm text-dm/80">
+                            {new Date(post.pubDate).toLocaleDateString()}
+                          </span>
+                          <div className="inline-flex items-center transition-colors duration-300 group text-h2 hover:text-h1">
+                            <span className="mr-2 text-sm font-medium">
+                              Read More
+                            </span>
+                            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
-        )}
+        </section>
       </div>
-    </section>
+    </div>
   );
 };
 

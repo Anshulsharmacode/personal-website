@@ -1,18 +1,19 @@
-
-import Hero from "@/components/Hero"
+import Hero from "@/components/Hero";
 import AboutMe from "@/components/HomeAbout";
-import Experience from "@/components/Exp"
-import Navbar from "@/components/Navbar"
-import Education from "@/components/Education"
+import Experience from "@/components/Exp";
+import Education from "@/components/Education";
 export default function Home() {
   return (
-    <div>
-    <Navbar/>
-    <Hero/>
-    <AboutMe/>
-    <Experience/>
-    <Education/>
-   
+    <div className="relative min-h-screen">
+      <div className="fixed inset-0 w-full h-full bg-gradient-to-b from-bc via-bc/90 to-bc opacity-80" />
+      <div className="fixed inset-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(96,165,250,0.1)_0%,transparent_65%)]" />
+
+      <div className="relative z-1">
+        <Hero />
+        <AboutMe />
+        <Experience />
+        <Education />
+      </div>
     </div>
   );
 }

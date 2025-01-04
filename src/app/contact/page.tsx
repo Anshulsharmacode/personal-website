@@ -1,157 +1,107 @@
-"use client"
-import { SetStateAction, useState } from 'react';
-import { FaLinkedin, FaGithub, FaEnvelope, FaFileDownload } from 'react-icons/fa';
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
+"use client";
 
-interface ApiResponse {
-  success: boolean;
-  message?: string;
-  error?: string;
-  details?: Array<{ message: string }>;
-}
+import React from "react";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaXTwitter,
+  FaMedium,
+  
+  FaPhone, // Importing the phone icon
+} from "react-icons/fa6";
 
-function ContactPage() {
-  const [email, setEmail] = useState('');
-  const [subject, setSubject] = useState('');
-  const [message, setMessage] = useState('');
-  const [status, setStatus] = useState<{
-    type: 'idle' | 'loading' | 'success' | 'error';
-    message: string;
-  }>({ type: 'idle', message: '' });
+const contactItems = [
+  {
+    icon: FaEnvelope,
+    label: "Email",
+    value: "yogendramanawat@gmail.com",
+    link: "mailto:yogendramanawat@gmail.com",
+  },
+  {
+    icon: FaEnvelope,
+    label: "Coursefy Email",
+    value: "yogendra@coursefy.online",
+    link: "mailto:yogendra@coursefy.online",
+  },
+  {
+    icon: FaPhone, // Adding phone icon
+    label: "Phone",
+    value: "7489989634",
+    link: "tel:7489989634", // Link for dialing the number
+  },
+  {
+    icon: FaGithub,
+    label: "GitHub",
+    value: "@Anshulsharmacode",
+    link: "https://github.com/Anshulsharmacode", // Updated link
+  },
+  {
+    icon: FaLinkedin,
+    label: "LinkedIn",
+    value: "@anshul-sharma-8386ansh",
+    link: "https://linkedin.com/in/anshul-sharma-8386ansh", // Updated link
+  },
+  {
+    icon: FaXTwitter,
+    label: "Twitter",
+    value: "@yogendramanawat",
+    link: "https://twitter.com/Anshulsh8386",
+  },
+  {
+    icon: FaMedium,
+    label: "Medium",
+    value: "@anshulsharma8386",
+    link: "https://medium.com/@anshulsharma8386", // Updated link
+  },
+];
 
-  const resetForm = () => {
-    setEmail('');
-    setSubject('');
-    setMessage('');
-  };
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    
-    setStatus({ type: 'loading', message: 'Sending...' });
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, subject, message }),
-      });
-
-      const data: ApiResponse = await response.json();
-
-      if (data.success) {
-        setStatus({ 
-          type: 'success', 
-          message: 'Message sent successfully!' 
-        });
-        resetForm();
-      } else {
-        setStatus({ 
-          type: 'error', 
-          message: data.details?.[0]?.message || data.error || 'Failed to send message' 
-        });
-      }
-    } catch {
-      // Error handling removed as per instructions
-    }
-  };
-
+const ContactPage: React.FC = () => {
   return (
-    <div className="flex flex-col justify-center items-center px-6 py-16 min-h-screen bg-bc">
-      <Card className="w-full max-w-2xl shadow-2xl bg-cc">
-        <CardHeader>
-          <CardTitle className="text-4xl font-bold text-center text-h1">
-            Get in Touch <FaEnvelope className="inline-block ml-2" />
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="space-y-2">
-              <Input
-                type="email"
-                placeholder="Your Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="bg-bc text-dm border-hm focus:border-h2 focus:ring-h2"
-              />
-            </div>
-            <div className="space-y-2">
-              <Input
-                type="text"
-                placeholder="Subject"
-                value={subject}
-                onChange={(e) => setSubject(e.target.value)}
-                required
-                className="bg-bc text-dm border-hm focus:border-h2 focus:ring-h2"
-              />
-            </div>
-            <div className="space-y-2">
-              <Textarea
-                placeholder="Your Message"
-                value={message}
-                onChange={(e: { target: { value: SetStateAction<string>; }; }) => setMessage(e.target.value)}
-                required
-                className="bg-bc text-dm border-hm focus:border-h2 focus:ring-h2 min-h-[150px]"
-              />
-            </div>
-            <Button 
-              type="submit" 
-              className="w-full font-semibold transition-colors duration-300 bg-h2 hover:bg-h1 text-bc"
-            >
-              Send Message
-            </Button>
-          </form>
-
-          {status.message && (
-            <p className={`mt-4 text-center font-medium ${
-              status.type === 'success' ? 'text-green-500' : 
-              status.type === 'error' ? 'text-red-500' : 
-              'text-blue-500'
-            }`}>
-              {status.message}
-            </p>
-          )}
-
-          <div className="flex flex-col items-center mt-8 space-y-6">
-            <div className="flex space-x-6">
-              <a 
-                href="https://www.linkedin.com/in/yourprofile" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="transition-colors duration-300 text-h2 hover:text-h1"
-              >
-                <FaLinkedin className="w-8 h-8" />
-              </a>
-              <a 
-                href="https://github.com/yourprofile" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="transition-colors duration-300 text-h2 hover:text-h1"
-              >
-                <FaGithub className="w-8 h-8" />
-              </a>
-            </div>
-
-            <Button 
-              asChild
-              className="font-semibold transition-colors duration-300 bg-h2 hover:bg-h1 text-bc"
-            >
-              <a href="/path/to/your/cv.pdf" download>
-                <FaFileDownload className="mr-2 w-4 h-4" />
-                Download CV
-              </a>
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
-    </div>
+    <section className="flex flex-col justify-center items-center px-4 py-16 min-h-screen">
+      <div className="w-full max-w-3xl text-center">
+        <h1 className="mb-8 text-4xl font-bold font-raleway">Get in Touch</h1>
+        <p className="mb-12 text-l font-montserrat">
+          Welcome to my contact page! I&apos;m open to professional inquiries
+          and collaborations. Please include a proper introduction and purpose
+          in your message. Note: Messages without clear context may not receive
+          a response. I look forward to meaningful connections!
+        </p>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          {contactItems.map((item, index) => (
+            <ContactItem key={index} {...item} />
+          ))}
+        </div>
+      </div>
+    </section>
   );
+};
+
+interface ContactItemProps {
+  icon: React.ElementType;
+  label: string;
+  value: string;
+  link: string;
 }
+
+const ContactItem: React.FC<ContactItemProps> = ({
+  icon: Icon,
+  label,
+  value,
+  link,
+}) => {
+  return (
+    <a
+      href={link}
+      className="flex items-center p-4 space-x-4 rounded-lg transition-colors hover:bg-gray-100 group"
+    >
+      <Icon className="text-2xl text-gray-600 group-hover:text-black" />
+      <div className="flex-1 text-left">
+        <div className="font-bold group-hover:text-black">{label}</div>
+        <div className="text-blue-500 group-hover:text-black">{value}</div>
+      </div>
+    </a>
+  );
+};
 
 export default ContactPage;
