@@ -1,15 +1,21 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Crimson_Text } from "next/font/google";
+import { Montserrat, Raleway } from "next/font/google";
 import Navbar from "@/components/Navbar";
+import React from "react";
 import Footer from "@/components/fotter";
 
-
-
-const crimsonText = Crimson_Text({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-crimson",
-  weight: ["400", "600", "700"], // Adjusted to match the expected type
+  variable: "--font-montserrat",
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
+
+const raleway = Raleway({
+  subsets: ["latin"],
+  variable: "--font-raleway",
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -27,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={` ${crimsonText.variable} font-sans antialiased bg-bc min-h-screen`}
+        className={`${montserrat.variable} ${raleway.variable} font-sans antialiased bg-bc min-h-screen`}
       >
         <Navbar />
         <main className="flex-grow">{children}</main>

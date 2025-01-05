@@ -3,8 +3,7 @@
 import React from "react";
 import {
   FaCalendarAlt,
-  FaBriefcaseMedical,
-  FaStethoscope,
+
   FaLaptopCode,
 } from "react-icons/fa";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
@@ -15,7 +14,7 @@ const Experience: React.FC = () => {
     {
       company: "VideoAIditor.com",
       designation: "SDE Intern",
-      duration: "Jan 2025 - Present",
+      duration: "Dec 2025 - Present",
       description: [
         "Developed scalable backend using Node.js, NestJS and Python with AWS infrastructure",
         "Implemented video processing pipeline using AWS S3 for storage and SQS for job queuing",
@@ -23,33 +22,34 @@ const Experience: React.FC = () => {
         "Optimized AWS infrastructure for cost-effective real-time video processing at scale",
       ],
       icon: <FaLaptopCode className="w-8 h-8 text-h2" />,
+      website: "https://videoaiditor.com", // Added website link
     },
-    {
-      company: "Annapurna Hospital",
-      designation: "Biomedical Engginer Intern",
-      duration: "Aug 2023 - Sep 2023 (20 Days)",
-      description: [
-        "Worked in the Radiology Department, focusing on the operation and maintenance of CT-Scan and MRI machines.",
-        "Gained hands-on experience with advanced medical imaging technologies, learning the fundamentals of image processing.",
-        "Explored the role of artificial intelligence in enhancing diagnostic capabilities.",
-        "Special attention was given to the application of AI in medical imaging, understanding its significance in providing faster and more accurate diagnoses.",
-        "Extensively explored the role of AI in automated image analysis.",
-      ],
-      icon: <FaBriefcaseMedical className="w-8 h-8 text-h2" />,
-    },
-    {
-      company: "V-ONE Hospital",
-      designation: "Biomedical Engginer Intern",
-      duration: "May 2023 - July 2023 (45 Days)",
-      description: [
-        "Worked intensively on advanced medical imaging techniques including CT-Scan and MRI.",
-        "Gained deep insights into the day-to-day operation of imaging equipment and the interpretation of results.",
-        "Collaborated with radiologists to optimize the use of AI tools for faster diagnosis and better patient outcomes.",
-        "Focused on exploring AI-driven advancements in MRI imaging, particularly in automating image recognition and reducing human error in diagnostics.",
-        "Analyzed case studies on how machine learning models are trained to detect anomalies in scans.",
-      ],
-      icon: <FaStethoscope className="w-8 h-8 text-h2" />,
-    },
+    // {
+    //   company: "Annapurna Hospital",
+    //   designation: "Biomedical Engginer Intern",
+    //   duration: "Aug 2023 - Sep 2023 (20 Days)",
+    //   description: [
+    //     "Maintained and repaired medical equipment to ensure optimal performance and compliance with safety regulations",
+    //     "Troubleshot technical issues to minimize downtime and support continuous patient care",
+    //     "Collaborated with healthcare teams to integrate new technologies and enhance operational efficiency",
+    //     "Performed regular calibration and safety checks on critical care equipment",
+    //     "Documented maintenance records and repair logs following hospital protocols",
+    //   ],
+    //   icon: <FaBriefcaseMedical className="w-8 h-8 text-h2" />,
+    // },
+    // {
+    //   company: "V-ONE Hospital",
+    //   designation: "Biomedical Engginer Intern",
+    //   duration: "May 2023 - July 2023 (45 Days)",
+    //   description: [
+    //     "Ensured reliable operation of medical equipment through regular maintenance, calibration and compliance with safety standards",
+    //     "Addressed and resolved technical issues swiftly to minimize downtime and ensure uninterrupted patient care",
+    //     "Collaborated with healthcare professionals to deploy and optimize new technologies, improving efficiency",
+    //     "Conducted thorough inspections and preventive maintenance of biomedical instrumentation",
+    //     "Maintained comprehensive documentation of equipment performance and maintenance activities",
+    //   ],
+    //   icon: <FaStethoscope className="w-8 h-8 text-h2" />,
+    // },
   ];
 
   return (
@@ -58,7 +58,7 @@ const Experience: React.FC = () => {
         <div className="mx-auto max-w-4xl">
           <h2 className="mb-16 text-5xl font-bold tracking-tight text-center">
             <span className="text-h1">Professional</span>{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-h2 to-h1">
+            <span className="text-transparent bg-clip-text bg-h2">
               Experience
             </span>
           </h2>
@@ -67,7 +67,8 @@ const Experience: React.FC = () => {
             {experiences.map((exp) => (
               <Card
                 key={exp.company}
-                className="backdrop-blur-lg transition-all duration-300 bg-cc/5 border-h1/20 hover:border-h1/30"
+                className="backdrop-blur-lg bg-cc/5 border-h1/20 hover:border-cg hover:bg-gradient-to-br hover:from-hcf/5 hover:to-hcf/5"
+                onClick={() => window.open(exp.website, "_blank")} // Open company website on click
               >
                 <CardHeader>
                   <div className="flex gap-4 items-center">

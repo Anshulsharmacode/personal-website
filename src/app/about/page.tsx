@@ -1,30 +1,138 @@
-
 import {
   FaRobot,
-  FaHeartbeat,
-  FaBrain,
   FaCloud,
   FaCode,
   FaLayerGroup,
   FaTools,
+  FaServer,
+  FaDatabase,
 } from "react-icons/fa";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import {
   SiTypescript,
-  SiJupyter,
-  SiGooglecolab,
-  SiKaggle,
   SiGit,
-  SiXcode,
   SiNextdotjs,
   SiNestjs,
   SiPython,
   SiNodedotjs,
   SiAmazon,
-  SiTurso,
   SiMongodb,
+  SiPostgresql,
+  SiRedis,
+  SiDocker,
+  SiKubernetes,
+  SiTerraform,
+  SiTypescript,
 } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
+import React from "react";
+import { VscVscode } from "react-icons/vsc";
+
+interface ExpertiseCardProps {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+}
+
+interface SkillIconProps {
+  icon: React.ElementType;
+  label: string;
+}
+
+const expertiseCards: ExpertiseCardProps[] = [
+  {
+    icon: FaCode,
+    title: "Frontend Development",
+    description:
+      "Building modern web applications using React, Next.js, and TypeScript with a focus on performance, accessibility, and clean architecture.",
+  },
+  {
+    icon: FaServer,
+    title: "Backend Development",
+    description:
+      "Developing scalable backend systems using Node.js, NestJS, and Python. Experienced in microservices architecture and API design.",
+  },
+  {
+    icon: FaCloud,
+    title: "Cloud Infrastructure",
+    description:
+      "Expertise in AWS services including S3, SQS, EC2. Implementing efficient cloud infrastructure for scalable applications.",
+  },
+  {
+    icon: FaDatabase,
+    title: "Database Management",
+    description:
+      "Proficient in both SQL and NoSQL databases. Experience with MongoDB, PostgreSQL, and Redis for various applications.",
+  },
+  {
+    icon: FaLayerGroup,
+    title: "System Architecture",
+    description:
+      "Designing scalable distributed systems with a focus on performance, reliability, and maintainability.",
+  },
+  {
+    icon: FaTools,
+    title: "DevOps Practices",
+    description:
+      "Skilled in CI/CD pipelines, containerization with Docker, orchestration with Kubernetes, and Infrastructure as Code using Terraform.",
+  },
+  {
+    icon: FaRobot,
+    title: "AI & Machine Learning",
+    description:
+      "Integrating AI/ML models into applications. Developing intelligent features for enhanced user experiences.",
+  },
+];
+
+const skillsTools: SkillIconProps[] = [
+  { icon: FaReact, label: "React" },
+  
+  { icon: SiNextdotjs, label: "Next.js" },
+  { icon: SiNestjs, label: "Nest.js" },
+  { icon: SiPython, label: "Python" },
+  { icon: SiNodedotjs, label: "Node.js" },
+  { icon: SiTypescript, label: "TypeScript" },
+  { icon: VscVscode, label: "Vscode" },
+  { icon: SiAmazon, label: "AWS" },
+  // { icon: SiMongodb, label: "MongoDB" },
+  // { icon: SiPostgresql, label: "PostgreSQL" },
+  // { icon: SiRedis, label: "Redis" },
+  // { icon: SiDocker, label: "Docker" },
+  // { icon: SiKubernetes, label: "Kubernetes" },
+  // { icon: SiTerraform, label: "Terraform" },
+  { icon: SiGit, label: "Git" },
+  
+];
+
+const ExpertiseCard = ({
+  icon: Icon,
+  title,
+  description,
+}: ExpertiseCardProps) => (
+  <Card className="backdrop-blur-lg bg-cc/5 border-h1/20 hover:border-cg hover:border-2 hover:bg-gradient-to-br from-hcf/5 to-hcf/5">
+    <CardHeader>
+      <div className="flex gap-4 items-center">
+        <div className="p-3 rounded-full bg-h1/10 text-h2">
+          <Icon className="w-8 h-8" />
+        </div>
+        <div className="space-y-1">
+          <h3 className="text-xl font-semibold text-h1">{title}</h3>
+        </div>
+      </div>
+    </CardHeader>
+    <CardContent className="text-h1">{description}</CardContent>
+  </Card>
+);
+
+const SkillIcon = ({ icon: Icon, label }: SkillIconProps) => {
+  if (!Icon) return null;
+  return (
+    <div className="flex flex-col gap-2 items-center">
+      <Icon className="w-12 h-12 text-h2" />
+      <span className="text-sm text-h1">{label}</span>
+    </div>
+  );
+};
 
 export default function About() {
   return (
@@ -36,235 +144,67 @@ export default function About() {
         <section className="py-24 bg-none font-montserrat">
           <div className="container px-4 mx-auto">
             <div className="mx-auto max-w-4xl">
-              {/* About Section */}
               <h1 className="mb-16 text-5xl font-bold tracking-tight text-center">
                 <span className="text-h1">About</span>{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-h2 to-h1">
-                  Me
-                </span>
+                <span className="text-h2">Me</span>
               </h1>
 
-              <Card className="mb-20 backdrop-blur-lg transition-all duration-300 bg-cc/5 border-h1/20 hover:border-h1/30">
+              <Card className="mb-20 backdrop-blur-lg bg-cc/5 border-h1/20 hover:border-cg hover:border-2 hover:bg-gradient-to-br from-hcf/5 to-hcf/5">
                 <CardContent className="p-8">
-                  <p className="leading-relaxed text-hm">
+                  <p className="leading-relaxed text-h1">
                     Hi! I&apos;m{" "}
-                    <span className="font-semibold text-h2">Anshul Sharma</span>
-                    , a Software Developer with a unique background in Biomedical Engineering. 
-                    I combine my technical knowledge in full-stack development with my understanding of healthcare systems 
-                    to create innovative digital solutions.
+                    <span className="font-semibold text-h2">Anshul Sharma</span>, a
+                    Software Development Engineer with a unique background in
+                    Biomedical Engineering. Currently, I&apos;m focused on building scalable backend
+                    systems while leveraging my engineering foundation to bring a systematic approach
+                    to software development.
                   </p>
-                  <p className="mt-4 leading-relaxed text-hm">
-                    My diverse skill set spans modern web technologies and API development. 
-                    I&apos;m passionate about building scalable applications that make an impact.
+                  <p className="mt-4 leading-relaxed text-h1">
+                    I have interned in development with Node.js,
+                    React, and generative AI. My experience includes developing video processing
+                    pipelines, implementing microservices architecture, and optimizing
+                    applications for large-scale use.
                   </p>
                 </CardContent>
               </Card>
 
-              {/* Expertise Section */}
               <div className="space-y-20">
-                <h2 className="text-3xl font-bold tracking-tight text-h1">Technical Expertise</h2>
+                <h2 className="mb-16 text-3xl font-bold tracking-tight">
+                  <span className="text-h1">Technical</span>{" "}
+                  <span className="text-h2">Expertise</span>
+                </h2>
                 <div className="grid grid-cols-1 gap-8 sm:gap-10 md:grid-cols-2 lg:grid-cols-3">
-                  {/* Web Development */}
-                  <Card className="backdrop-blur-lg transition-all duration-300 bg-cc/5 border-h1/20 hover:border-h1/30">
-                    <CardHeader>
-                      <div className="flex gap-4 items-center">
-                        <div className="p-3 rounded-full bg-h1/10 text-h1">
-                          <FaCode className="w-8 h-8" />
-                        </div>
-                        <div className="space-y-1">
-                          <h3 className="text-2xl font-semibold text-h1">Web Development</h3>
-                        </div>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="text-dm/90">
-                      Proficient in React, Next.js, and TypeScript. Building responsive and 
-                      accessible web applications with clean code.
-                    </CardContent>
-                  </Card>
-
-                  {/* API Development */}
-                  <Card className="backdrop-blur-lg transition-all duration-300 bg-cc/5 border-h1/20 hover:border-h1/30">
-                    <CardHeader>
-                      <div className="flex gap-4 items-center">
-                        <div className="p-3 rounded-full bg-h1/10 text-h1">
-                          <FaCloud className="w-8 h-8" />
-                        </div>
-                        <div className="space-y-1">
-                          <h3 className="text-2xl font-semibold text-h1">API Development</h3>
-                        </div>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="text-dm/90">
-                      Building RESTful APIs and managing databases. Experience with Node.js, 
-                      Express, and database systems.
-                    </CardContent>
-                  </Card>
-
-                  {/* Healthcare Tech */}
-                  <Card className="backdrop-blur-lg transition-all duration-300 bg-cc/5 border-h1/20 hover:border-h1/30">
-                    <CardHeader>
-                      <div className="flex gap-4 items-center">
-                        <div className="p-3 rounded-full bg-h1/10 text-h1">
-                          <FaHeartbeat className="w-8 h-8" />
-                        </div>
-                        <div className="space-y-1">
-                          <h3 className="text-2xl font-semibold text-h1">Healthcare Tech</h3>
-                        </div>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="text-dm/90">
-                      Building healthcare applications and medical imaging systems. 
-                      Experience with medical data standards and processing.
-                    </CardContent>
-                  </Card>
-
-                  {/* AI/ML Integration */}
-                  <Card className="backdrop-blur-lg transition-all duration-300 bg-cc/5 border-h1/20 hover:border-h1/30">
-                    <CardHeader>
-                      <div className="flex gap-4 items-center">
-                        <div className="p-3 rounded-full bg-h1/10 text-h1">
-                          <FaBrain className="w-8 h-8" />
-                        </div>
-                        <div className="space-y-1">
-                          <h3 className="text-2xl font-semibold text-h1">AI/ML Integration</h3>
-                        </div>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="text-dm/90">
-                      Basic integration of ML models into web apps using TensorFlow.js. 
-                      Building AI-powered features for better user experiences.
-                    </CardContent>
-                  </Card>
-
-                  {/* Full Stack Development */}
-                  <Card className="backdrop-blur-lg transition-all duration-300 bg-cc/5 border-h1/20 hover:border-h1/30">
-                    <CardHeader>
-                      <div className="flex gap-4 items-center">
-                        <div className="p-3 rounded-full bg-h1/10 text-h1">
-                          <FaLayerGroup className="w-8 h-8" />
-                        </div>
-                        <div className="space-y-1">
-                          <h3 className="text-2xl font-semibold text-h1">Full Stack</h3>
-                        </div>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="text-dm/90">
-                      End-to-end development with frontend and backend expertise. 
-                      Database design and deployment experience.
-                    </CardContent>
-                  </Card>
-
-                  {/* DevOps & Tools */}
-                  <Card className="backdrop-blur-lg transition-all duration-300 bg-cc/5 border-h1/20 hover:border-h1/30">
-                    <CardHeader>
-                      <div className="flex gap-4 items-center">
-                        <div className="p-3 rounded-full bg-h1/10 text-h1">
-                          <FaTools className="w-8 h-8" />
-                        </div>
-                        <div className="space-y-1">
-                          <h3 className="text-2xl font-semibold text-h1">DevOps & Tools</h3>
-                        </div>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="text-dm/90">
-                      Working with Git, CI/CD, Docker, and cloud platforms. 
-                      Managing modern development workflows.
-                    </CardContent>
-                  </Card>
-
-                  {/* Generative AI */}
-                  <Card className="backdrop-blur-lg transition-all duration-300 bg-cc/5 border-h1/20 hover:border-h1/30">
-                    <CardHeader>
-                      <div className="flex gap-4 items-center">
-                        <div className="p-3 rounded-full bg-h1/10 text-h1">
-                          <FaRobot className="w-8 h-8" />
-                        </div>
-                        <div className="space-y-1">
-                          <h3 className="text-2xl font-semibold text-h1">Generative AI</h3>
-                        </div>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="text-dm/90">
-                      Building intelligent models for content generation, healthcare applications, and automated workflows powered by AI.
-                    </CardContent>
-                  </Card>
+                  {expertiseCards.map((card, index) => (
+                    <ExpertiseCard key={index} {...card} />
+                  ))}
                 </div>
               </div>
 
-              {/* Vision Section */}
               <div className="mt-32 space-y-8">
-                <h2 className="text-3xl font-bold tracking-tight text-h1">Vision</h2>
-                <Card className="backdrop-blur-lg transition-all duration-300 bg-cc/5 border-h1/20 hover:border-h1/30">
-                  <CardContent className="p-8 text-dm/90">
-                    As a Software Developer with a Biomedical Engineering background, I aim to 
-                    bridge healthcare and technology through innovative web solutions. I focus on 
-                    building efficient applications that impact both healthcare and web development.
+                <h2 className="text-3xl font-bold tracking-tight text-h1">
+                  Vision
+                </h2>
+                <Card className="backdrop-blur-lg bg-cc/5 border-h1/20 hover:border-cg hover:border-2 hover:bg-gradient-to-br from-hcf/5 to-hcf/5">
+                  <CardContent className="p-8 text-h1">
+                    As a Software Engineer, I strive to build robust and scalable systems
+                    that solve real-world problems. My focus is on creating efficient,
+                    maintainable applications using modern technologies and best practices
+                    in software development.
                   </CardContent>
                 </Card>
               </div>
 
-              {/* Skills & Tools Section */}
               <div className="mt-32 space-y-8">
-                <h2 className="text-3xl font-bold tracking-tight text-h1">Skills & Tools</h2>
-                <Card className="backdrop-blur-lg transition-all duration-300 bg-cc/5 border-h1/20 hover:border-h1/30">
+                <h2 className="mb-16 text-3xl font-bold tracking-tight">
+                  <span className="text-h1">Skills</span>{" "}
+                  <span className="text-h2">& Tools</span>
+                </h2>
+                <Card className="backdrop-blur-lg bg-cc/5 border-h1/20 hover:border-cg hover:border-2 hover:bg-gradient-to-br from-hcf/5 to-hcf/5">
                   <CardContent className="p-8">
                     <div className="grid grid-cols-3 gap-8 md:grid-cols-4 lg:grid-cols-6">
-                      <div className="flex flex-col gap-2 items-center">
-                        <SiKaggle className="w-12 h-12 text-h1" />
-                        <span className="text-sm text-dm/90">Kaggle</span>
-                      </div>
-                      <div className="flex flex-col gap-2 items-center">
-                        <SiGit className="w-12 h-12 text-h1" />
-                        <span className="text-sm text-dm/90">Git</span>
-                      </div>
-                      <div className="flex flex-col gap-2 items-center">
-                        <SiXcode className="w-12 h-12 text-h1" />
-                        <span className="text-sm text-dm/90">VS Code</span>
-                      </div>
-                      <div className="flex flex-col gap-2 items-center">
-                        <FaReact className="w-12 h-12 text-h1" />
-                        <span className="text-sm text-dm/90">React</span>
-                      </div>
-                      <div className="flex flex-col gap-2 items-center">
-                        <SiNextdotjs className="w-12 h-12 text-h1" />
-                        <span className="text-sm text-dm/90">Next.js</span>
-                      </div>
-                      <div className="flex flex-col gap-2 items-center">
-                        <SiNestjs className="w-12 h-12 text-h1" />
-                        <span className="text-sm text-dm/90">Nest.js</span>
-                      </div>
-                      <div className="flex flex-col gap-2 items-center">
-                        <SiPython className="w-12 h-12 text-h1" />
-                        <span className="text-sm text-dm/90">Python</span>
-                      </div>
-                      <div className="flex flex-col gap-2 items-center">
-                        <SiNodedotjs className="w-12 h-12 text-h1" />
-                        <span className="text-sm text-dm/90">Node.js</span>
-                      </div>
-                      <div className="flex flex-col gap-2 items-center">
-                        <SiTypescript className="w-12 h-12 text-h1" />
-                        <span className="text-sm text-dm/90">Typescript</span>
-                      </div>
-                      <div className="flex flex-col gap-2 items-center">
-                        <SiAmazon className="w-12 h-12 text-h1" />
-                        <span className="text-sm text-dm/90">AWS</span>
-                      </div>
-                      <div className="flex flex-col gap-2 items-center">
-                        <SiTurso className="w-12 h-12 text-h1" />
-                        <span className="text-sm text-dm/90">Cursor</span>
-                      </div>
-                      <div className="flex flex-col gap-2 items-center">
-                        <SiMongodb className="w-12 h-12 text-h1" />
-                        <span className="text-sm text-dm/90">MongoDB</span>
-                      </div>
-                      <div className="flex flex-col gap-2 items-center">
-                        <SiJupyter className="w-12 h-12 text-h1" />
-                        <span className="text-sm text-dm/90">Jupyter</span>
-                      </div>
-                      <div className="flex flex-col gap-2 items-center">
-                        <SiGooglecolab className="w-12 h-12 text-h1" />
-                        <span className="text-sm text-dm/90">Colab</span>
-                      </div>
+                      {skillsTools.map((skill, index) => (
+                        <SkillIcon key={index} {...skill} />
+                      ))}
                     </div>
                   </CardContent>
                 </Card>

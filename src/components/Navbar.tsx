@@ -13,6 +13,10 @@ import {
   FaFileDownload,
   FaBars,
 } from "react-icons/fa";
+import { Dancing_Script } from "next/font/google";
+import { usePathname } from "next/navigation";
+
+const dancingScript = Dancing_Script({ subsets: ["latin"] });
 
 interface NavItem {
   label: string;
@@ -21,12 +25,15 @@ interface NavItem {
 }
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const pathname = usePathname();
+
   const navItems: NavItem[] = [
     { label: "Home", href: "/", icon: <FaHome className="w-4 h-4" /> },
     { label: "About", href: "/about", icon: <FaUser className="w-4 h-4" /> },
     {
       label: "Projects",
-      href: "/project", // Corrected href to match the intended route
+      href: "/project",
       icon: <FaProjectDiagram className="w-4 h-4" />,
     },
     { label: "Blogs", href: "/blog", icon: <FaBlog className="w-4 h-4" /> },
@@ -37,6 +44,17 @@ const Navbar = () => {
     },
   ];
 
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
+
+  const handleDownloadCV = () => {
+    window.open(
+      "https://drive.google.com/file/d/1UTEeYITEupaGHHtLshtvXBWQhw0d1KG3/view?usp=sharing",
+      "_blank"
+    );
+  };
+
   return (
     <nav
       className={`fixed top-0 z-10 w-full backdrop-blur-sm bg-bc/20 font-raleway`}
@@ -46,7 +64,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link
             href="/"
-            className="text-3xl bg-clip-text bg-gradient-to-r transition-all duration-300 ext-transparent d font-dancing-script from-h1 via-h2 to-hm hover:opacity-80"
+            className={`${dancingScript.className} text-3xl font-bold bg-gradient-to-r from-h1 via-h2 to-h1 bg-clip-text text-transparent hover:scale-105 transition-all duration-300 hover:from-h2 hover:via-h1 hover:to-h2`}
           >
             Anshul
           </Link>
@@ -57,7 +75,9 @@ const Navbar = () => {
               <Link
                 key={item.label}
                 href={item.href}
-                className="flex gap-2 items-center font-medium transition-all duration-200 text-dm hover:text-h1 hover:scale-105"
+                className={`flex gap-2 items-center font-medium transition-all duration-200 ${
+                  pathname === item.href ? "text-h2" : "text-dm hover:text-h1"
+                } hover:scale-105`}
               >
                 {item.icon}
                 {item.label}
@@ -65,7 +85,8 @@ const Navbar = () => {
             ))}
             <Button
               variant="outline"
-              className="transition-all duration-300 border-h1/50 text-dm hover:bg-h1/10 hover:text-h1 hover:border-h1 hover:scale-105"
+              onClick={handleDownloadCV}
+              className="transition-all duration-300 border-h1/50 text-dm hover:bg-gradient-to-br hover:from-hcf/5 hover:to-hcf/5 hover:text-h1 hover:border-cg hover:scale-105"
             >
               <FaFileDownload className="mr-2 w-4 h-4" />
               Download CV
@@ -74,12 +95,12 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <Sheet>
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="transition-all duration-200 text-dm hover:bg-h1/10 hover:text-h1"
+                  className="transition-all text-dm hover:bg-h1/10 hover:text-h1"
                 >
                   <FaBars className="w-6 h-6" />
                 </Button>
@@ -90,7 +111,12 @@ const Navbar = () => {
                     <Link
                       key={item.label}
                       href={item.href}
-                      className="flex gap-3 items-center text-lg font-medium transition-all duration-200 text-dm hover:text-h1 hover:translate-x-2"
+                      onClick={handleLinkClick}
+                      className={`flex gap-3 items-center text-lg font-medium transition-all duration-150 ${
+                        pathname === item.href
+                          ? "text-h2"
+                          : "text-dm hover:text-h1"
+                      } hover:translate-x-2`}
                     >
                       {item.icon}
                       {item.label}
@@ -98,7 +124,11 @@ const Navbar = () => {
                   ))}
                   <Button
                     variant="outline"
-                    className="w-full transition-all duration-300 border-h1/50 text-dm hover:bg-h1/10 hover:text-h1 hover:border-h1"
+                    onClick={() => {
+                      handleLinkClick();
+                      handleDownloadCV();
+                    }}
+                    className="w-full transition-all duration-100 border-h1/50 text-dm hover:bg-gradient-to-br hover:from-hcf/5 hover:to-hcf/5 hover:text-h1 hover:border-cg"
                   >
                     <FaFileDownload className="mr-2 w-4 h-4" />
                     Download CV

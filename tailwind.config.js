@@ -8,12 +8,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        h1: "#F8FAFC", // Main Title Color (h1) - Light color for contrast against dark bg
-        h2: "#60A5FA", // Section Titles (h2) - Bright blue that works on dark bg
-        hm: "#E2E8F0", // Sub-headings & Skill Titles (hm) - Light gray for dark bg
-        dm: "#CBD5E1", // Description Text (dm) - Medium gray for readability on dark
-        bc: "#020617", // Background Color (bc) - Very dark blue/black
-        cc: "#1E293B", // Card color - Dark slate for contrast against background
+        h1: "#FFF9F5", // Main Title Color - Softer warm white for better contrast
+        h2: "#FF7D3C", // S// Section Titles - Electric mint
+        hm: "#7C76F7", // Sub-headings - Bright purple
+        dm: "#D1D5F5", // Description Text - Soft cool white
+        bc: "#0A0C14", // Background Color - Deep space black
+        cc: "#151823", // Card color - Rich charcoal
+        cg: "#FF7D3C", // Card glow color
+        hcf: "#FF7D3C", // Hover Card Glow Color
       },
       borderRadius: {
         lg: "var(--radius)",

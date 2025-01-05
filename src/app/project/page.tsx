@@ -1,6 +1,7 @@
 "use client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
+import React from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa"; // Importing icons
 
 // Project interface
@@ -24,12 +25,7 @@ const ProjectCard = ({
   link,
   githubLink, // Added githubLink to props
 }: Project) => (
-  <Card
-    className={`group h-full backdrop-blur-lg bg-cc/5 border-h1/20 
-    hover:border-h1/40 transition-all duration-500 
-    hover:transform hover:-translate-y-1
-    ${isLarge ? "col-span-full" : ""}`}
-  >
+  <Card className="group h-full backdrop-blur-lg bg-cc/5 border-h1/20 hover:border-cg hover:border-2 hover:bg-hcf/5">
     <CardHeader className="p-6">
       <CardTitle
         className={`${
@@ -126,8 +122,6 @@ const hardwareProjects: Project[] = [
     imageAlt: "Electronic Medical Device",
     description:
       "Designed an innovative electronic stethoscope with digital signal processing for enhanced medical diagnostics and remote monitoring capabilities.",
-    githubLink: "https://github.com/yourusername/electronics-stethoscope", // Example GitHub link
-    link: "https://yourliveprojectlink.com", // Example live demo link
   },
   {
     title: "Speaker Amplifier",
@@ -135,8 +129,6 @@ const hardwareProjects: Project[] = [
     imageAlt: "Professional Audio Amplifier",
     description:
       "Developed a high-fidelity amplifier with advanced circuitry for superior audio performance and minimal distortion.",
-    githubLink: "https://github.com/yourusername/speaker-amplifier", // Example GitHub link
-    link: "https://yourliveprojectlink.com", // Example live demo link
   },
   {
     title: "Dual Power Supply",
@@ -144,8 +136,6 @@ const hardwareProjects: Project[] = [
     imageAlt: "Power Supply Unit",
     description:
       "Engineered a precision dual power supply using a single transformer, featuring voltage regulation and overload protection for reliable power delivery.",
-    githubLink: "https://github.com/yourusername/dual-power-supply", // Example GitHub link
-    link: "https://yourliveprojectlink.com", // Example live demo link
   },
 ];
 
@@ -161,15 +151,16 @@ export default function Projects() {
             <div className="mx-auto max-w-7xl">
               <h1 className="mb-16 text-5xl font-bold tracking-tight text-center">
                 <span className="text-h1">Featured</span>{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-h2 to-h1">
+                <span className="text-transparent bg-clip-text bg-h2 ">
                   Projects
                 </span>
               </h1>
 
               {/* Technical Projects Section */}
               <div className="space-y-20">
-                <h2 className="text-3xl font-bold tracking-tight text-h1">
-                  Technical Projects
+                <h2 className="mb-16 text-3xl font-bold tracking-tight">
+                  <span className="text-h1">Technical</span>{" "}
+                  <span className="text-h2">Projects</span>
                 </h2>
 
                 {/* Large Project */}
@@ -193,8 +184,9 @@ export default function Projects() {
 
               {/* Hardware Projects Section */}
               <div className="mt-32 space-y-20">
-                <h2 className="text-3xl font-bold tracking-tight text-h1">
-                  Hardware Projects
+                <h2 className="mb-16 text-3xl font-bold tracking-tight">
+                  <span className="text-h1">Hardware</span>{" "}
+                  <span className="text-h2">Projects</span>
                 </h2>
 
                 <div className="grid grid-cols-1 gap-8 sm:gap-10 md:grid-cols-2 lg:grid-cols-3">

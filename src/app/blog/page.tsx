@@ -74,7 +74,7 @@ const BlogShowcase: React.FC = () => {
             <div className="mx-auto max-w-7xl">
               <h2 className="mb-16 text-5xl font-bold text-center tracking-tight">
                 <span className="text-h1">Blog</span>{" "}
-                <span className="bg-gradient-to-r from-h2 to-h1 bg-clip-text text-transparent">
+                <span className="bg-h2 bg-clip-text text-transparent">
                   Posts
                 </span>
               </h2>
@@ -94,10 +94,10 @@ const BlogShowcase: React.FC = () => {
                   {blogPosts?.map((post: BlogPost, index: number) => (
                     <Card
                       key={index}
-                      className="group h-full backdrop-blur-lg bg-cc/5 border-h1/20 hover:border-h1/40 transition-all duration-500 hover:transform hover:-translate-y-1 cursor-pointer"
+                      className="group h-full overflow-hidden backdrop-blur-lg bg-cc/5 border-h1/20 hover:border-cg hover:border-2 hover:bg-gradient-to-br hover:from-hcf/5 hover:to-hcf/5 transition-all duration-500 hover:transform hover:-translate-y-1 cursor-pointer"
                       onClick={() => window.open(post.link, "_blank")}
                     >
-                      <div className="overflow-hidden relative w-full h-48">
+                      <div className="overflow-hidden relative w-full h-48 rounded-t-xl">
                         <Image
                           src={post.thumbnail}
                           alt={post.title}

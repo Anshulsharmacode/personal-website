@@ -38,17 +38,15 @@ const Education: React.FC = () => {
         <div className="mx-auto max-w-4xl">
           <h2 className="mb-16 text-5xl font-bold text-center tracking-tight">
             <span className="text-h1">Educational</span>{" "}
-            <span className="bg-gradient-to-r from-h2 to-h1 bg-clip-text text-transparent">
-              Journey
-            </span>
+            <span className="bg-h2 bg-clip-text text-transparent">Journey</span>
           </h2>
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
             {educationData.map((edu, index) => (
               <div key={index}>
-                <Card className="group h-full backdrop-blur-lg bg-cc/5 border-h1/20 hover:border-h1/40 transition-all duration-500 hover:transform hover:-translate-y-1">
+                <Card className="h-full backdrop-blur-lg bg-cc/5 border-h1/20 hover:border-cg hover:bg-gradient-to-br hover:from-hcf/5 hover:to-hcf/5">
                   <CardHeader className="flex justify-center items-center pt-8">
-                    <div className="p-4 rounded-full bg-gradient-to-br from-h2/20 to-h1/20 text-h1 group-hover:scale-110 transition-all duration-500">
+                    <div className="p-4 rounded-full bg-gradient-to-br from-h2/20 to-h1/20 text-h1">
                       {edu.icon}
                     </div>
                   </CardHeader>

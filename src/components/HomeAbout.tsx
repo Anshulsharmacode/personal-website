@@ -11,22 +11,18 @@ const AboutMe = () => {
         <div className="mx-auto max-w-4xl">
           <h1 className="mb-16 text-5xl font-bold tracking-tight text-center">
             <span className="text-h1">About</span>{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-h2 to-h1">
-            </span>
+            <span className="text-transparent bg-clip-text bg-h2">Me</span>
           </h1>
 
-          <Card className="mb-20 backdrop-blur-lg transition-all duration-300 bg-cc/5 border-h1/20 hover:border-h1/30">
+          <Card className="mb-20 backdrop-blur-lg bg-cc/5 border-h1/20 hover:border-cg hover:border-2 hover:bg-gradient-to-br from-hcf/5 to-hcf/5">
             <CardContent className="p-8 md:p-10">
               <p className="mb-8 text-lg font-light leading-relaxed text-dm">
                 Hi! I&apos;m{" "}
-                <span className="font-medium text-h1">Anshul Sharma</span>, a
-                Software Developer with a unique background in Biomedical Engineering. 
-                I combine my technical knowledge in full-stack development with my understanding 
-                of healthcare systems to create innovative digital solutions.
+                <span className="font-medium text-h2">Anshul Sharma</span>, a
+                Software Development Engineering Intern at VideoAIditor.com and a final year Biomedical Engineering student. I&apos;m passionate about leveraging technology to build innovative solutions.
               </p>
               <p className="text-lg font-light leading-relaxed text-dm">
-                My diverse skill set spans modern web technologies and API development. 
-                I&apos;m passionate about building usefull applications that make an impact.
+                Currently, I&apos;m working on scalable backend systems and video processing pipelines at VideoAIditor.com, where I&apos;ve gained hands-on experience with AWS infrastructure, Node.js, and Python. I&apos;m constantly learning and expanding my skills in modern web development and cloud technologies.
               </p>
             </CardContent>
           </Card>
@@ -34,32 +30,31 @@ const AboutMe = () => {
           <div className="grid gap-8 md:grid-cols-3">
             {[
               {
-                icon: <FaCode className="w-12 h-12" />,
-                title: "Web Development",
+                icon: <FaCode className="w-8 h-8" />,
+                title: "Backend Development",
                 description:
-                  "Proficient in React, Next.js, and TypeScript. Building responsive and accessible web applications with clean code.",
+                  "Experience with Node.js, NestJS, and Python. Building scalable systems with AWS infrastructure and microservices architecture.",
               },
               {
-                icon: <FaMap className="w-12 h-12" />,
-                title: "API Development",
+                icon: <FaMap className="w-8 h-8" />,
+                title: "Cloud & DevOps",
                 description:
-                  "Building RESTful APIs and managing databases. Experience with Node.js, Express, and database systems.",
+                  "Proficient in AWS services including S3, SQS, and implementing efficient video processing pipelines at scale.",
               },
               {
-                icon: <FaRobot className="w-12 h-12" />,
-                title: "Generative AI",
+                icon: <FaRobot className="w-8 h-8" />,
+                title: "Full-Stack Development",
                 description:
-                  "Building intelligent models for content generation, healthcare applications, and automated workflows powered by AI.",
+                  "Building modern web applications using React, Next.js, and TypeScript with focus on performance and user experience.",
               },
-            
             ].map((skill, index) => (
               <Card
                 key={index}
-                className="h-full backdrop-blur-lg transition-all duration-500 group bg-cc/5 border-h1/20 hover:border-h1/40 hover:transform hover:-translate-y-1"
+                className="h-full backdrop-blur-lg bg-cc/5 border-h1/20 hover:border-cg hover:border-2 hover:bg-gradient-to-br from-hcf/5 to-hcf/5"
               >
                 <CardHeader>
                   <div className="flex flex-col gap-4 items-center">
-                    <div className="p-4 bg-gradient-to-br rounded-full transition-all duration-500 from-h2/20 to-h1/20 text-h1 group-hover:scale-110">
+                    <div className="p-4 bg-gradient-to-br rounded-full from-h2/20 to-h1/20 text-h2">
                       {skill.icon}
                     </div>
                     <h2 className="text-xl font-semibold tracking-tight text-h1">
