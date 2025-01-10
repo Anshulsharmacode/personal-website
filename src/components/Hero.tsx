@@ -6,10 +6,11 @@ import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import React from "react";
 import { motion } from "framer-motion";
-import { Dancing_Script } from "next/font/google";
+import { DM_Serif_Text } from "next/font/google";
 
-const dancingScript = Dancing_Script({
+const dmSerifText = DM_Serif_Text({
   subsets: ["latin"],
+  weight: "400",
 });
 
 const MotionDiv = dynamic(
@@ -50,7 +51,7 @@ const Hero = () => {
         className="relative z-10 px-4 mx-auto max-w-5xl text-center"
       >
         <MotionDiv
-          className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-8 ${dancingScript.className} tracking-tight`}
+          className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-8 ${dmSerifText.className} tracking-tight`}
         >
           {Array.from("Anshul Sharma").map((char, index) => (
             <MotionDiv

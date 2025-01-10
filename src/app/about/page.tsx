@@ -2,7 +2,6 @@ import {
   FaRobot,
   FaCloud,
   FaCode,
-  FaLayerGroup,
   FaTools,
   FaServer,
   FaDatabase,
@@ -16,13 +15,9 @@ import {
   SiPython,
   SiNodedotjs,
   SiAmazon,
-  SiMongodb,
-  SiPostgresql,
-  SiRedis,
   SiDocker,
-  SiKubernetes,
-  SiTerraform,
-  SiTypescript,
+  SiMongodb,
+  SiJavascript,
 } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
 import React from "react";
@@ -42,66 +37,53 @@ interface SkillIconProps {
 const expertiseCards: ExpertiseCardProps[] = [
   {
     icon: FaCode,
-    title: "Frontend Development",
-    description:
-      "Building modern web applications using React, Next.js, and TypeScript with a focus on performance, accessibility, and clean architecture.",
-  },
-  {
-    icon: FaServer,
-    title: "Backend Development",
-    description:
-      "Developing scalable backend systems using Node.js, NestJS, and Python. Experienced in microservices architecture and API design.",
-  },
-  {
-    icon: FaCloud,
-    title: "Cloud Infrastructure",
-    description:
-      "Expertise in AWS services including S3, SQS, EC2. Implementing efficient cloud infrastructure for scalable applications.",
-  },
-  {
-    icon: FaDatabase,
-    title: "Database Management",
-    description:
-      "Proficient in both SQL and NoSQL databases. Experience with MongoDB, PostgreSQL, and Redis for various applications.",
-  },
-  {
-    icon: FaLayerGroup,
-    title: "System Architecture",
-    description:
-      "Designing scalable distributed systems with a focus on performance, reliability, and maintainability.",
-  },
-  {
-    icon: FaTools,
-    title: "DevOps Practices",
-    description:
-      "Skilled in CI/CD pipelines, containerization with Docker, orchestration with Kubernetes, and Infrastructure as Code using Terraform.",
+    title: "Full Stack",
+    description: "Building modern web apps with React, Next.js and Node.js",
   },
   {
     icon: FaRobot,
-    title: "AI & Machine Learning",
+    title: "AI/ML",
+    description: "Integrating generative AI and ML solutions into applications",
+  },
+  {
+    icon: FaServer,
+    title: "API Integration",
     description:
-      "Integrating AI/ML models into applications. Developing intelligent features for enhanced user experiences.",
+      "Utilizing RESTful APIs for seamless data communication and integration",
+  },
+  {
+    icon: FaCloud,
+    title: "Cloud",
+    description: "AWS services and cloud infrastructure deployment",
+  },
+  {
+    icon: FaDatabase,
+    title: "Database",
+    description:
+      "Database design, system architecture and performance optimization",
+  },
+  {
+    icon: FaTools,
+    title: "Tools",
+    description: "Git, VS Code, testing frameworks and agile practices",
   },
 ];
 
 const skillsTools: SkillIconProps[] = [
   { icon: FaReact, label: "React" },
-  
   { icon: SiNextdotjs, label: "Next.js" },
   { icon: SiNestjs, label: "Nest.js" },
-  { icon: SiPython, label: "Python" },
+
   { icon: SiNodedotjs, label: "Node.js" },
+  { icon: SiPython, label: "Python" },
   { icon: SiTypescript, label: "TypeScript" },
-  { icon: VscVscode, label: "Vscode" },
+  { icon: SiJavascript, label: "JavaScript" },
   { icon: SiAmazon, label: "AWS" },
-  // { icon: SiMongodb, label: "MongoDB" },
-  // { icon: SiPostgresql, label: "PostgreSQL" },
-  // { icon: SiRedis, label: "Redis" },
-  // { icon: SiDocker, label: "Docker" },
-  // { icon: SiKubernetes, label: "Kubernetes" },
-  // { icon: SiTerraform, label: "Terraform" },
+  { icon: VscVscode, label: "VS Code" },
   { icon: SiGit, label: "Git" },
-  
+
+  { icon: SiMongodb, label: "MongoDB" },
+  { icon: SiDocker, label: "Docker" },
 ];
 
 const ExpertiseCard = ({
@@ -153,17 +135,19 @@ export default function About() {
                 <CardContent className="p-8">
                   <p className="leading-relaxed text-h1">
                     Hi! I&apos;m{" "}
-                    <span className="font-semibold text-h2">Anshul Sharma</span>, a
-                    Software Development Engineer with a unique background in
-                    Biomedical Engineering. Currently, I&apos;m focused on building scalable backend
-                    systems while leveraging my engineering foundation to bring a systematic approach
-                    to software development.
+                    <span className="font-semibold text-h2">Anshul Sharma</span>
+                    , a Software Development Engineer with a unique background
+                    in Biomedical Engineering. Currently, I&apos;m focused on
+                    building scalable backend systems while leveraging my
+                    engineering foundation to bring a systematic approach to
+                    software development.
                   </p>
                   <p className="mt-4 leading-relaxed text-h1">
-                    I have interned in development with Node.js,
-                    React, and generative AI. My experience includes developing video processing
-                    pipelines, implementing microservices architecture, and optimizing
-                    applications for large-scale use.
+                    I have interned in development with Node.js, React, and
+                    generative AI. My experience includes developing video
+                    processing pipelines, implementing microservices
+                    architecture, and optimizing applications for large-scale
+                    use.
                   </p>
                 </CardContent>
               </Card>
@@ -186,10 +170,11 @@ export default function About() {
                 </h2>
                 <Card className="backdrop-blur-lg bg-cc/5 border-h1/20 hover:border-cg hover:border-2 hover:bg-gradient-to-br from-hcf/5 to-hcf/5">
                   <CardContent className="p-8 text-h1">
-                    As a Software Engineer, I strive to build robust and scalable systems
-                    that solve real-world problems. My focus is on creating efficient,
-                    maintainable applications using modern technologies and best practices
-                    in software development.
+                    As a Software Engineer, I strive to build robust and
+                    scalable systems that solve real-world problems. My focus is
+                    on creating efficient, maintainable applications using
+                    modern technologies and best practices in software
+                    development.
                   </CardContent>
                 </Card>
               </div>

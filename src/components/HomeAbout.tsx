@@ -19,10 +19,17 @@ const AboutMe = () => {
               <p className="mb-8 text-lg font-light leading-relaxed text-dm">
                 Hi! I&apos;m{" "}
                 <span className="font-medium text-h2">Anshul Sharma</span>, a
-                Software Development Engineering Intern at VideoAIditor.com and a final year Biomedical Engineering student. I&apos;m passionate about leveraging technology to build innovative solutions.
+                Software Engineer with a unique background in Biomedical
+                Engineering. I&apos;m passionate about leveraging technology to
+                build innovative solutions, particularly in the realm of
+                generative AI and full-stack development.
               </p>
               <p className="text-lg font-light leading-relaxed text-dm">
-                Currently, I&apos;m working on scalable backend systems and video processing pipelines at VideoAIditor.com, where I&apos;ve gained hands-on experience with AWS infrastructure, Node.js, and Python. I&apos;m constantly learning and expanding my skills in modern web development and cloud technologies.
+                Currently utilizing my skills in AWS infrastructure, Node.js,
+                Python, and leveraging technologies like RAG
+                (Retrieval-Augmented Generation) and LLM (Large Language
+                Models). I am dedicated to continuous learning and expanding my
+                expertise in modern web development and cloud technologies.
               </p>
             </CardContent>
           </Card>
@@ -31,9 +38,9 @@ const AboutMe = () => {
             {[
               {
                 icon: <FaCode className="w-8 h-8" />,
-                title: "Backend Development",
+                title: "Generative AI Development",
                 description:
-                  "Experience with Node.js, NestJS, and Python. Building scalable systems with AWS infrastructure and microservices architecture.",
+                  "Building innovative solutions using generative AI technologies and frameworks, focusing on user-centric design.",
               },
               {
                 icon: <FaMap className="w-8 h-8" />,
@@ -45,15 +52,15 @@ const AboutMe = () => {
                 icon: <FaRobot className="w-8 h-8" />,
                 title: "Full-Stack Development",
                 description:
-                  "Building modern web applications using React, Next.js, and TypeScript with focus on performance and user experience.",
+                  "Creating modern web applications using React, Next.js, and TypeScript with a focus on performance and user experience.",
               },
             ].map((skill, index) => (
               <Card
                 key={index}
-                className="h-full backdrop-blur-lg bg-cc/5 border-h1/20 hover:border-cg hover:border-2 hover:bg-gradient-to-br from-hcf/5 to-hcf/5"
+                className="h-full backdrop-blur-lg bg-cc/5 border-h1/20   hover:bg-gradient-to-br from-hcf/5 to-hcf/5"
               >
                 <CardHeader>
-                  <div className="flex flex-col gap-4 items-center">
+                  <div className="flex flex-col gap-4 items-center text-center">
                     <div className="p-4 bg-gradient-to-br rounded-full from-h2/20 to-h1/20 text-h2">
                       {skill.icon}
                     </div>
