@@ -1,6 +1,5 @@
 import Hero from "@/components/Hero";
 import AboutMe from "@/components/HomeAbout";
-import Experience from "@/components/Exp";
 import Education from "@/components/Education";
 export default function Home() {
   return (
