@@ -1,6 +1,8 @@
 import Hero from "@/components/Hero";
 import AboutMe from "@/components/HomeAbout";
 import Education from "@/components/Education";
+import Experience from "@/components/Exp";
+
 export default function Home() {
   return (
     <div className="relative min-h-screen">
@@ -12,8 +14,8 @@ export default function Home() {
         <Hero />
         <div className="mx-8 border border-b border-whit md:mx-48"></div>
         <AboutMe />
-        {/* <div className="mx-8 border border-b border-whit md:mx-48"></div>
-        <Experience /> */}
+        <div className="mx-8 border border-b border-whit md:mx-48"></div>
+        <Experience /> 
         <div className="mx-8 border border-b border-whit md:mx-48"></div>
         <Education />
         <div className="mx-8 border border-b border-whit md:mx-48"></div>
