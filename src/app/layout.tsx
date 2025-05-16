@@ -19,11 +19,38 @@ const raleway = Raleway({
   weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
-
 export const metadata: Metadata = {
   title: "Anshul Sharma | Portfolio",
-  description: "Biomedical Engineer & AI Machine Learning Expert",
+  description: "Biomedical Engineer & Software Engineer", 
   keywords: ["Portfolio", "Biomedical Engineering", "AI", "Machine Learning"],
+  authors: [{ name: "Anshul Sharma", url: "https://anshulsharma-pr.vercel.app/" }],
+  creator: "Anshul Sharma",
+  icons:[
+    {
+      rel: "icon",
+      sizes: "512x512",
+      url: "/signature.png",
+    },
+    {
+      rel: "apple-touch-icon",
+      url: "/signature.png",
+    },
+
+  ],
+  openGraph: {
+    title: "Anshul Sharma | Portfolio",
+    description: "Biomedical Engineer & Software Engineer",
+    url: "https://anshulsharma-pr.vercel.app/",
+    siteName: "Anshul Sharma",
+    images: [
+      {
+        url: "/signature.png",
+        width: 1200,
+        height: 630,
+        alt: "Anshul Sharma | Portfolio",
+      },
+    ],
+  }
 };
 
 export default function RootLayout({
