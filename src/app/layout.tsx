@@ -4,6 +4,7 @@ import { Montserrat, Raleway } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import React from "react";
 import Footer from "@/components/fotter";
+import { FaWhatsapp } from "react-icons/fa";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -38,6 +39,16 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
+
+        <a
+          href="https://wa.me/917489989634"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed bottom-6 right-6 bg-green-500 p-4 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 z-50"
+          aria-label="Contact on WhatsApp"
+        >
+          <FaWhatsapp className="w-6 h-6 text-white" />
+        </a>
       </body>
     </html>
   );

@@ -14,8 +14,9 @@ export default function Home() {
         <Hero />
         <div className="mx-8 border border-b border-whit md:mx-48"></div>
         <AboutMe />
-        <div className="mx-8 border border-b border-whit md:mx-48"></div>
-        <Experience /> 
+        {/* <div className="mx-8 border border-b border-whit md:mx-48"></div>
+        <SkillsPage/>
+        <Experience />  */}
         <div className="mx-8 border border-b border-whit md:mx-48"></div>
         <Education />
         <div className="mx-8 border border-b border-whit md:mx-48"></div>

@@ -53,7 +53,7 @@ const expertiseCards: ExpertiseCardProps[] = [
   },
   {
     icon: FaCloud,
-    title: "Cloud",
+    title: "Cloud (Basic)",
     description: "AWS services and cloud infrastructure deployment",
   },
   {
@@ -83,7 +83,7 @@ const skillsTools: SkillIconProps[] = [
   { icon: SiGit, label: "Git" },
 
   { icon: SiMongodb, label: "MongoDB" },
-  { icon: SiDocker, label: "Docker" },
+  // {  },
 ];
 
 const ExpertiseCard = ({
@@ -138,16 +138,13 @@ export default function About() {
                     <span className="font-semibold text-h2">Anshul Sharma</span>
                     , a Software Development Engineer with a unique background
                     in Biomedical Engineering. Currently, I&apos;m focused on
-                    building scalable backend systems while leveraging my
+                    building scalable Frontend applications
+                    {/* systems while leveraging my
                     engineering foundation to bring a systematic approach to
-                    software development.
+                    software development. */}
                   </p>
                   <p className="mt-4 leading-relaxed text-h1">
-                    I have interned in development with Node.js, React, and
-                    generative AI. My experience includes developing video
-                    processing pipelines, implementing microservices
-                    architecture, and optimizing applications for large-scale
-                    use.
+                   I have interned in development using Node.js, React, and generative AI. My experience includes building responsive user interfaces, working with microservices, and optimizing frontend performance for scalability.
                   </p>
                 </CardContent>
               </Card>

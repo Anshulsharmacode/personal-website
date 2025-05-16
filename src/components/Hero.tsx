@@ -96,6 +96,7 @@ const Hero = () => {
             <span className="mr-2">Get in Touch</span>
             <FaEnvelope className="w-4 h-4" />
           </Button>
+          
         </motion.div>
       </MotionDiv>
     </section>

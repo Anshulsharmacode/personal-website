@@ -25,7 +25,7 @@ const ProjectCard = ({
   link,
   githubLink, // Added githubLink to props
 }: Project) => (
-  <Card className="group h-full backdrop-blur-lg bg-cc/5 border-h1/20 hover:border-cg hover:border-2 hover:bg-hcf/5">
+  <Card className="group h-full backdrop-blur-lg bg-cc/5 border-h1/20 hover:border-cg ">
     <CardHeader className="p-6">
       <CardTitle
         className={`${
@@ -37,14 +37,14 @@ const ProjectCard = ({
     </CardHeader>
     <CardContent className="p-6 pt-0">
       <div className="flex flex-col space-y-6">
-        <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl">
+        <div className="relative w-full h-[300px] overflow-hidden rounded-xl">
           <Image
             src={imageSrc}
             alt={imageAlt}
             fill
-            className="object-cover transition duration-700 ease-in-out group-hover:scale-110"
+            className="object-contain"
             priority
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            sizes="(max-width: 5400px) 90vw, (max-width: 1024px) 50vw, 33vw"
             quality={90}
           />
         </div>
@@ -95,25 +95,61 @@ const technicalProjects: Project[] = [
     githubLink: "https://github.com/Anshulsharmacodes/Medicine-ai", // Example GitHub link
     link: "https://medicine-ui.vercel.app", // Example live demo link
   },
+ 
+   {
+    title: "Mysterious Message",
+    imageSrc: "/chat.png",
+    imageAlt: "chat app",
+    description:
+      "Created an advanced mathematical model for simulating tumor development and testing treatment effectiveness using computational biology approaches.",
+    githubLink: "https://github.com/Anshulsharmacode/message_app", // Example GitHub link
+    link: "https://message-app-pied.vercel.app/", // Example live demo link
+  },
+   {
+    title: "Lungs Cancer Classification Major Project",
+    imageSrc: "/Major.png",
+    imageAlt: "Major",
+    description:
+      "Developed a lung cancer classification system using CT scan images, integrating Random Forest and Gradient Boosting models. Built a user-friendly frontend with Next.js and Axios to accept image input and display prediction results.",
+    githubLink: "https://github.com/Anshulsharmacode/final-Major", // Example GitHub link
+    link: "https://final-major.vercel.app/", // Example live demo link
+  },
   {
+    title: "React Flow",
+    imageSrc: "/React_flow.png",
+    imageAlt: "Major",
+    description:
+    "Created an interactive web app using React Flow to guide users through a decision-making process, enhanced with AI-based suggestions and ending with a personalized pizza recommendation based on their choices.",
+    githubLink: "https://github.com/Anshulsharmacode/react-flow", // Example GitHub link
+    link: "https://react-flow-orcin.vercel.app/", // Example live demo link
+  },
+];
+
+
+
+const BiomedicalProjects: Project[] = [
+   {
     title: "Mathematical Model for Lung Cancer",
     imageSrc: "/lungs2.png",
     imageAlt: "Data Analytics",
     description:
       "Developed a sophisticated mathematical model to simulate cancer cell growth patterns and optimize treatment strategies using differential equations and numerical methods.",
-    githubLink: "https://github.com/Anshulsharmacodes/Major", // Example GitHub link
+    // githubLink: "https://github.com/Anshulsharmacodes/Major", // Example GitHub link
     // link: "https://", // Example live demo link
   },
   {
     title: "Mathematical Model for Brain Tumor",
     imageSrc: "https://images.unsplash.com/photo-1559757175-5700dde675bc",
-    imageAlt: "Brain Tumor Analysis Visualization",
+    imageAlt: "chat app",
     description:
-      "Created an advanced mathematical model for simulating tumor development and testing treatment effectiveness using computational biology approaches.",
-    githubLink: "https://github.com/Anshulsharmacodes/Brain-Mathmetical-Model", // Example GitHub link
+      "Built an anonymous messaging platform with AI-powered suggestions, secure auth, and email verification using modern full-stack technologies.",
+    // githubLink: "https://github.com/Anshulsharmacodes/Brain-Mathmetical-Model", // Example GitHub link
     // link: "https://yourliveprojectlink.com", // Example live demo link
   },
-];
+]
+
+
+
 
 const hardwareProjects: Project[] = [
   {
@@ -195,6 +231,20 @@ export default function Projects() {
                   ))}
                 </div>
               </div>
+
+              {/* Biomedical Projects Section */}
+              <div className="mt-32 space-y-20">
+                <h2 className="mb-16 text-3xl font-bold tracking-tight">
+                  <span className="text-h1">Biomedical</span>{" "}
+                  <span className="text-h2">Projects</span>
+                </h2>
+
+                <div className="grid grid-cols-1 gap-8 sm:gap-10 md:grid-cols-2 lg:grid-cols-3">
+                  {BiomedicalProjects.map((project) => (
+                    <ProjectCard key={project.title} {...project} />
+                  ))}
+                </div>
+               </div> 
             </div>
           </div>
         </section>

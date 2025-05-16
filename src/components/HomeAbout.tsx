@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
-import { FaCode, FaRobot, FaMap } from "react-icons/fa";
+import { FaCode, FaRobot, FaMap, FaBrain } from "react-icons/fa";
 
 const AboutMe = () => {
   return (
@@ -25,7 +25,7 @@ const AboutMe = () => {
                 generative AI and full-stack development.
               </p>
               <p className="text-lg font-light leading-relaxed text-dm">
-                Currently utilizing my skills in AWS infrastructure, Node.js,
+                Currently utilizing my skills in AWS Services, Node.js,
                 Python, and leveraging technologies like RAG
                 (Retrieval-Augmented Generation) and LLM (Large Language
                 Models). I am dedicated to continuous learning and expanding my
@@ -43,11 +43,12 @@ const AboutMe = () => {
                   "Building innovative solutions using generative AI technologies and frameworks, focusing on user-centric design.",
               },
               {
-                icon: <FaMap className="w-8 h-8" />,
-                title: "Cloud & DevOps",
+                icon: <FaBrain className="w-8 h-8" />,
+                title: "Machine Learning",
                 description:
-                  "Proficient in AWS services including S3, SQS, and implementing efficient video processing pipelines at scale.",
+                  "Knowledge of basic ML concepts and tools like regression, classification, and working with models using Python.",
               },
+
               {
                 icon: <FaRobot className="w-8 h-8" />,
                 title: "Full-Stack Development",
