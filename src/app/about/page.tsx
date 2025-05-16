@@ -15,7 +15,7 @@ import {
   SiPython,
   SiNodedotjs,
   SiAmazon,
-  SiDocker,
+  
   SiMongodb,
   SiJavascript,
 } from "react-icons/si";

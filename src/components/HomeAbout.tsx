@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
-import { FaCode, FaRobot, FaMap, FaBrain } from "react-icons/fa";
+import { FaCode, FaRobot, FaBrain } from "react-icons/fa";
 
 const AboutMe = () => {
   return (
