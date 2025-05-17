@@ -101,7 +101,7 @@ const technicalProjects: Project[] = [
     imageSrc: "/chat.png",
     imageAlt: "chat app",
     description:
-      "Created an advanced mathematical model for simulating tumor development and testing treatment effectiveness using computational biology approaches.",
+      "Built an anonymous messaging platform with AI-powered suggestions, secure auth, and email verification using modern full-stack technologies.",
     githubLink: "https://github.com/Anshulsharmacode/message_app", // Example GitHub link
     link: "https://message-app-pied.vercel.app/", // Example live demo link
   },
