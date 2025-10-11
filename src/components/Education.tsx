@@ -28,7 +28,7 @@ const Education: React.FC = () => {
       degree: "B.Tech",
       specialization: "Biomedical Eng.",
       year: "2021 - 2025",
-      result: "6.0 CGPA",
+      result: "6.4 CGPA",
     },
   ];
 
