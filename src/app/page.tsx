@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import AboutMe from "@/components/HomeAbout";
 import Education from "@/components/Education";
+import Experience from "@/components/Exp";
 // import Experience from "@/components/Exp";
 
 export default function Home() {
@@ -15,8 +16,8 @@ export default function Home() {
         <div className="mx-8 border border-b border-whit md:mx-48"></div>
         <AboutMe />
         {/* <div className="mx-8 border border-b border-whit md:mx-48"></div>
-        <SkillsPage/>
-        <Experience />  */}
+        // <SkillsPage/> */}
+        <Experience />
         <div className="mx-8 border border-b border-whit md:mx-48"></div>
         <Education />
         <div className="mx-8 border border-b border-whit md:mx-48"></div>

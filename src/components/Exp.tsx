@@ -1,28 +1,27 @@
 "use client";
 
 import React from "react";
-import {
-  FaCalendarAlt,
-
-  FaLaptopCode,
-} from "react-icons/fa";
+import { FaCalendarAlt } from "react-icons/fa";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 const Experience: React.FC = () => {
   const experiences = [
     {
-      company: "VideoAIditor.com",
+      company: "AI Caller",
       designation: "SDE Intern",
       duration: "Dec 2025 - Present",
       description: [
-        "Developed scalable backend using Node.js, NestJS and Python with AWS infrastructure",
-        "Implemented video processing pipeline using AWS S3 for storage and SQS for job queuing",
-        "Built custom video rendering engine in Python with custom video editing features",
-        "Optimized AWS infrastructure for cost-effective real-time video processing at scale",
+        "Customized full-stack features for AI Caller, covering both frontend interfaces and backend services",
+        "Implemented MongoDB aggregation pipelines to handle reporting and data queries",
+        "Integrated Large Language Models (LLMs) for AI-driven conversation flows with logic",
+        "Built and optimized custom file management using AWS S3 for secure and scalable storage",
+        // "Collaborated with cross-functional teams to enhance performance, reliability, and cost efficiency across the system",
       ],
-      icon: <FaLaptopCode className="w-8 h-8 text-h2" />,
-      website: "https://videoaiditor.com", // Added website link
+
+      // eslint-disable-next-line @next/next/no-img-element
+      icon: <img src="/Aicaller.png" alt="Aicaller" className="h-8 w-8" />,
+      website: "https://aicaller.io/",
     },
     // {
     //   company: "Annapurna Hospital",
@@ -57,7 +56,7 @@ const Experience: React.FC = () => {
       <div className="container px-4 mx-auto">
         <div className="mx-auto max-w-4xl">
           <h2 className="mb-16 text-5xl font-bold tracking-tight text-center">
-            <span className="text-h1">Professional</span>{" "}
+            <span className="text-h1">Work</span>{" "}
             <span className="text-transparent bg-clip-text bg-h2">
               Experience
             </span>

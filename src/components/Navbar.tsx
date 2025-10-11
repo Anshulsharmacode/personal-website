@@ -50,7 +50,7 @@ const Navbar = () => {
 
   const handleDownloadCV = () => {
     window.open(
-      "https://drive.google.com/file/d/1TbqNpAUCgJXU3vsrMrkZkCri4GdMQ5sx/view?usp=sharing",
+      "https://drive.google.com/file/d/1RSQXwN-lF9jSPgup2F2GXgQMaqEjNe6Y/view?usp=sharing",
       "_blank"
     );
   };

@@ -105,7 +105,7 @@ const BlogShowcase: React.FC = () => {
                           objectFit="cover"
                           className="transition-transform duration-500 group-hover:scale-105"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-bc via-bc/80 to-transparent"></div>
+                        {/* <div className="absolute inset-0 bg-gradient-to-t from-bc via-bc/80 to-transparent"></div> */}
                       </div>
                       <CardContent className="p-6">
                         <h3 className="flex items-center mb-2 text-xl font-semibold text-h1">

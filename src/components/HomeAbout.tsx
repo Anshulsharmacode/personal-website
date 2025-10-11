@@ -25,11 +25,11 @@ const AboutMe = () => {
                 generative AI and full-stack development.
               </p>
               <p className="text-lg font-light leading-relaxed text-dm">
-                Currently utilizing my skills in AWS Services, Node.js,
-                Python, and leveraging technologies like RAG
-                (Retrieval-Augmented Generation) and LLM (Large Language
-                Models). I am dedicated to continuous learning and expanding my
-                expertise in modern web development and cloud technologies.
+                Currently utilizing my skills in AWS Services, Node.js, Python,
+                and leveraging technologies like RAG (Retrieval-Augmented
+                Generation) and LLM (Large Language Models). I am dedicated to
+                continuous learning and expanding my expertise in modern web
+                development.
               </p>
             </CardContent>
           </Card>
@@ -40,11 +40,17 @@ const AboutMe = () => {
                 icon: <FaCode className="w-8 h-8" />,
                 title: "Generative AI Development",
                 description:
-                  "Building innovative solutions using generative AI technologies and frameworks, focusing on user-centric design.",
+                  "Building innovative solutions using generative AI technologies, focusing on user-centric design.",
               },
+              // {
+              //   icon: <FaBrain className="w-8 h-8" />,
+              //   title: "Machine Learning",
+              //   description:
+              //     "Knowledge of basic ML concepts and tools like regression, classification, and working with models using Python.",
+              // },
               {
                 icon: <FaBrain className="w-8 h-8" />,
-                title: "Machine Learning",
+                title: "Machine Learning (Basics)",
                 description:
                   "Knowledge of basic ML concepts and tools like regression, classification, and working with models using Python.",
               },

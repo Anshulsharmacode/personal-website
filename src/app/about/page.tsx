@@ -15,7 +15,6 @@ import {
   SiPython,
   SiNodedotjs,
   SiAmazon,
-  
   SiMongodb,
   SiJavascript,
 } from "react-icons/si";
@@ -42,7 +41,7 @@ const expertiseCards: ExpertiseCardProps[] = [
   },
   {
     icon: FaRobot,
-    title: "AI/ML",
+    title: "AI/ML (Basics)",
     description: "Integrating generative AI and ML solutions into applications",
   },
   {
@@ -144,7 +143,10 @@ export default function About() {
                     software development. */}
                   </p>
                   <p className="mt-4 leading-relaxed text-h1">
-                   I have interned in development using Node.js, React, and generative AI. My experience includes building responsive user interfaces, working with microservices, and optimizing frontend performance for scalability.
+                    I have interned in development using Node.js, React, and
+                    generative AI. My experience includes building responsive
+                    user interfaces, working with microservices, and optimizing
+                    frontend performance for scalability.
                   </p>
                 </CardContent>
               </Card>
