@@ -10,7 +10,7 @@ const Experience: React.FC = () => {
     {
       company: "AI Caller",
       designation: "SDE Intern",
-      duration: "Dec 2025 - Present",
+      duration: "june 2025 - Present",
       description: [
         "Customized full-stack features for AI Caller, covering both frontend interfaces and backend services",
         "Implemented MongoDB aggregation pipelines to handle reporting and data queries",
