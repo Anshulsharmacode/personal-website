@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import AboutMe from "@/components/HomeAbout";
 import Education from "@/components/Education";
 import Experience from "@/components/Exp";
+import ProjectsHome from "@/components/HomeProject";
 // import Experience from "@/components/Exp";
 
 export default function Home() {
@@ -15,9 +16,18 @@ export default function Home() {
         <Hero />
         <div className="mx-8 border border-b border-whit md:mx-48"></div>
         <AboutMe />
+        <div className="mx-8 border border-b border-whit md:mx-48"></div>
+        <Experience />
         {/* <div className="mx-8 border border-b border-whit md:mx-48"></div>
         // <SkillsPage/> */}
-        <Experience />
+        <div className="mx-8 border border-b border-whit md:mx-48"></div>
+
+        <h1 className="mb-16 text-5xl font-bold tracking-tight text-center mt-16">
+          <span className="text-h1">Technical</span>{" "}
+          <span className="text-transparent bg-clip-text bg-h2">Projects</span>
+        </h1>
+
+        <ProjectsHome />
         <div className="mx-8 border border-b border-whit md:mx-48"></div>
         <Education />
         <div className="mx-8 border border-b border-whit md:mx-48"></div>
