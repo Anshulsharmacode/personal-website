@@ -17,6 +17,7 @@ import {
   SiAmazon,
   SiMongodb,
   SiJavascript,
+  SiFirebase,
 } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
 import React from "react";
@@ -82,6 +83,7 @@ const skillsTools: SkillIconProps[] = [
   { icon: SiGit, label: "Git" },
 
   { icon: SiMongodb, label: "MongoDB" },
+  { icon: SiFirebase, label: "Firebase" },
   // {  },
 ];
 

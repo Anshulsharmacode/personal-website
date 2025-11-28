@@ -9,20 +9,33 @@ const Experience: React.FC = () => {
   const experiences = [
     {
       company: "AI Caller",
-      designation: "SDE Intern",
-      duration: "june 2025 - Present",
+      designation: "Software Development Engineer",
+      duration: "June 2025 – Present",
       description: [
-        "Customized full-stack features for AI Caller, covering both frontend interfaces and backend services",
-        "Implemented MongoDB aggregation pipelines to handle reporting and data queries",
-        "Integrated Large Language Models (LLMs) for AI-driven conversation flows with logic",
-        "Built and optimized custom file management using AWS S3 for secure and scalable storage",
-        // "Collaborated with cross-functional teams to enhance performance, reliability, and cost efficiency across the system",
+        // "Designed a distributed task-processing system using AWS SQS, Load Balancer, and worker services for efficient parallel execution",
+        "Built scalable backend pipelines using AWS S3, SNS, and SQS to process large document flows and isolate heavy workloads from user-facing services",
+        "Optimized system performance by tuning queue visibility timeouts, retry patterns, and worker concurrency",
+        "Enhanced the internal flow-builder by experimenting with XState and later migrating to Pipecat for improved orchestration and maintainability",
+        "Developed a Firebase-based web app using Firestore, Storage, and Auth featuring secure workflow panels and a billing dashboard",
       ],
-
       // eslint-disable-next-line @next/next/no-img-element
       icon: <img src="/Aicaller.png" alt="Aicaller" className="h-8 w-8" />,
       website: "https://aicaller.io/",
     },
+    {
+      company: "AI Caller",
+      designation: "Software Development Engineer Intern",
+      duration: "Dec 2024 – June 2025",
+      description: [
+        "Implemented MongoDB aggregation pipelines to extract structured insights from uploaded documents and build the knowledge base",
+        "Developed clean REST API endpoints with backend logic to power new UI features and improve workflow usability",
+        "Built a workflow-cloning system that safely duplicated configurations, rules, and metadata to reduce repetitive setup work",
+      ],
+      // eslint-disable-next-line @next/next/no-img-element
+      icon: <img src="/Aicaller.png" alt="Aicaller" className="h-8 w-8" />,
+      website: "https://aicaller.io/",
+    },
+
     // {
     //   company: "Annapurna Hospital",
     //   designation: "Biomedical Engginer Intern",
