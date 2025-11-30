@@ -9,27 +9,16 @@ const Experience: React.FC = () => {
   const experiences = [
     {
       company: "AI Caller",
-      designation: "Software Development Engineer",
-      duration: "June 2025 – Present",
-      description: [
-        // "Designed a distributed task-processing system using AWS SQS, Load Balancer, and worker services for efficient parallel execution",
-        "Built scalable backend pipelines using AWS S3, SNS, and SQS to process large document flows and isolate heavy workloads from user-facing services",
-        "Optimized system performance by tuning queue visibility timeouts, retry patterns, and worker concurrency",
-        "Enhanced the internal flow-builder by experimenting with XState and later migrating to Pipecat for improved orchestration and maintainability",
-        "Developed a Firebase-based web app using Firestore, Storage, and Auth featuring secure workflow panels and a billing dashboard",
-      ],
-      // eslint-disable-next-line @next/next/no-img-element
-      icon: <img src="/Aicaller.png" alt="Aicaller" className="h-8 w-8" />,
-      website: "https://aicaller.io/",
-    },
-    {
-      company: "AI Caller",
       designation: "Software Development Engineer Intern",
-      duration: "Dec 2024 – June 2025",
+      duration: "May 2025 – Present",
       description: [
-        "Implemented MongoDB aggregation pipelines to extract structured insights from uploaded documents and build the knowledge base",
-        "Developed clean REST API endpoints with backend logic to power new UI features and improve workflow usability",
-        "Built a workflow-cloning system that safely duplicated configurations, rules, and metadata to reduce repetitive setup work",
+        "Updated the internal flow-builder by experimenting with XState for orchestration and later migrating to Pipecat to create a more maintainable and intuitive workflow system",
+        "Worked with a distributed task-processing system where incoming jobs enter an SQS queue and are processed by worker services that handle the call flow",
+        "Managed duplicate call events in the SQS queue by identifying repeated jobs, removing redundant entries, and triggering automated notifications to maintain clean pipelines and accurate workflow execution",
+        "Implemented backend features using MongoDB aggregation pipelines to extract structured information from uploaded documents and expand the knowledge base",
+        "Added clean REST API endpoints and backend logic to support new UI features and improve overall workflow usability",
+        "Built a workflow-cloning backend process that duplicated configurations, rules, and metadata with safe validation, reducing repetitive setup work",
+        "Developed a Firebase-based web app (Firestore, Storage, auth rules) with a billing dashboard and secure workflow-management interfaces",
       ],
       // eslint-disable-next-line @next/next/no-img-element
       icon: <img src="/Aicaller.png" alt="Aicaller" className="h-8 w-8" />,
